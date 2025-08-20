@@ -143,7 +143,6 @@ ex:cadastral-parcel-x
 | Scope note | Indicating a Geocode for an Address is a direct method of positioning the Address on the earth. Addresses may also be located by reference to an Addressable Object which is an indirect method. This model does not indicate any Geocode / Addressable Object geometry relations, although they may exist
 | Expected Properties | <<additionalType>> - use to indicate the specialised type of a Geocode, <<hasSerialization, hasSerialization>> - use to indicate the position information of the Geocode
 
-`geo:hasGeometry` - to indicate the position of the Geocode. A GeoSPARQL `Geometry`.
 | Example
 a| [source,turtle]
 ----

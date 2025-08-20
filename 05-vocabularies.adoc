@@ -23,8 +23,6 @@ When address information formulated according to this model is exchanged within 
 | Lifecycle Model | Lifecycle Stage | <<additionalType>> | https://linked.data.gov.au/def/lifecycle-stage-types[ICSM's Lifecycle Stage Types]
 |===
 
-//// get the remainder from Anne's documents
-
 === Vocabularies previewed here
 
 Those defined here are:

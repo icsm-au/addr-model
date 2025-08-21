@@ -1,4 +1,4 @@
-@prefix : <https://linked.data.gov.au/def/addr#> .
+@prefix : <https://linked.data.gov.au/def/addr/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -11,23 +11,26 @@
 @prefix schema: <https://schema.org/> .
 @prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@base <https://linked.data.gov.au/def/addr#> .
+@base <https://linked.data.gov.au/def/addr/> .
 
 <https://linked.data.gov.au/def/addr> rdf:type owl:Ontology ;
-                                       owl:versionIRI <https://linked.data.gov.au/def/addr/0.0.1> ;
-                                       dcterms:provenance "This ontology was made for the Queensland Department of Resources, Spatial Information unit to assist with future Address database design. It is informed by the ICSM's Addressing 2035: Addressing Reform and Innovation for Australia and New Zealand, published in late 2021 and is based primarilty on the ISO19160-1 Addressing Part 1: Conceptual model with additional elements from a small set of well-regarded Semantic Web models such as GeoSPARQL and SKOS. It is also informed by the relational databalse model used for the G-NAF, Australia's Geocoded National Address File, and CSIRO work in 2018 to characterise the GNAF in Sematic Web form, the ontlogy for which is online at https:linked.data.gov.au/def/gnaf."@en ;
-                                       owl:versionInfo "0.0.1" ;
+                                       owl:versionIRI <https://linked.data.gov.au/def/addr/1.0.0> ;
+                                       skos:historyNote """This ontology was made initially for the Queensland Department of Resources, Spatial Information unit to assist with future Address database design. It was informed by the ICSM's Addressing 2035: Addressing Reform and Innovation for Australia and New Zealand, published in late 2021 and is based primarilty on the ISO19160-1 Addressing Part 1: Conceptual model with additional elements from a small set of well-regarded Semantic Web models such as GeoSPARQL and SKOS. It is also informed by the relational databalse model used for the G-NAF, Australia's Geocoded National Address File, and CSIRO work in 2018 to characterise the GNAF in Sematic Web form, the ontlogy for which is online at https:linked.data.gov.au/def/gnaf.
+
+In 2024, this model was addopted by the ICSM's Addressing Working Group as the national addressing model."""@en ;
+                                       owl:versionInfo "1.0.0" ;
                                        skos:definition "This model is a Semantic Web data model used for address information. It caters specifically for Australian & New Zealand's address modelling needs."@en ;
                                        skos:prefLabel "Address Model"@en ;
                                        schema:codeRepository "https://github.com/Spatial-Information-QLD/address-model/"^^xsd:anyURI ;
-                                       schema:copyrightHolder <https://linked.data.gov.au/org/qsi> ;
+                                       schema:copyrightHolder <https://linked.data.gov.au/org/icsm> ;
                                        schema:copyrightNotice "(c) The State of Queensland (Department of Resources) 2020-2023" ;
                                        schema:creator <https://orcid.org/0000-0002-8742-7730> ;
                                        schema:dateCreated "2021-12-16"^^xsd:date ;
                                        schema:dateIssued "2023-06-30"^^xsd:date ;
-                                       schema:dateModified "2025-08-20"^^xsd:date ;
+                                       schema:dateModified "2025-08-22"^^xsd:date ;
                                        schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
-                                       schema:publisher <https://linked.data.gov.au/org/qsi> .
+                                       schema:publisher <https://linked.data.gov.au/org/icsm> ;
+                                       <https://schmea.org/contributor> <https://linked.data.gov.au/org/qsi> .
 
 #################################################################
 #    Annotation properties
@@ -107,6 +110,10 @@ schema:publisher rdf:type owl:AnnotationProperty .
 
 ###  https://schema.org/url
 schema:url rdf:type owl:AnnotationProperty .
+
+
+###  https://schmea.org/contributor
+<https://schmea.org/contributor> rdf:type owl:AnnotationProperty .
 
 
 #################################################################
@@ -292,7 +299,7 @@ schema:value rdf:type owl:DatatypeProperty ;
 
 ###  http://www.opengis.net/ont/geosparql#Feature
 geo:Feature rdf:type owl:Class ;
-            rdfs:subClassOf :SpatialObject .
+            rdfs:subClassOf geo:SpatialObject .
 
 
 ###  http://www.opengis.net/ont/geosparql#Geocode
@@ -314,7 +321,11 @@ ex:addr-1
 
 ###  http://www.opengis.net/ont/geosparql#Geometry
 geo:Geometry rdf:type owl:Class ;
-             rdfs:subClassOf :SpatialObject .
+             rdfs:subClassOf geo:SpatialObject .
+
+
+###  http://www.opengis.net/ont/geosparql#SpatialObject
+geo:SpatialObject rdf:type owl:Class .
 
 
 ###  http://www.w3.org/2004/02/skos/core#Concept
@@ -323,10 +334,6 @@ skos:Concept rdf:type owl:Class .
 
 ###  http://www.w3.org/ns/prov#Agent
 <http://www.w3.org/ns/prov#Agent> rdf:type owl:Class .
-
-
-###  https://linked.data.gov.au/def/addr#SpatialObject
-:SpatialObject rdf:type owl:Class .
 
 
 ###  https://linked.data.gov.au/def/addr/Address
@@ -532,7 +539,7 @@ ex:addr-1
                         skos:prefLabel "Lifecycle Stage Type"@en ;
                         skos:usageNote """An Address Address Lifecycle Stage's type should be indicated with values from a controlled vocabulary - a code list.
 
-A SKOS vocabulary of Address Lifecycle Stage Types is suplied with this ontology."""@en .
+A SKOS vocabulary of Address Lifecycle Stage Types is supplied with this ontology."""@en .
 
 
 ###  https://schema.org/Organization
@@ -548,6 +555,12 @@ schema:Person rdf:type owl:Class ;
 #################################################################
 #    Individuals
 #################################################################
+
+###  https://linked.data.gov.au/org/icsm
+<https://linked.data.gov.au/org/icsm> rdf:type owl:NamedIndividual ;
+                                      schema:name "Intergovernmental Committee on Surveying & Mapping" ;
+                                      schema:url "https://www.icsm.gov.au"^^xsd:anyURI .
+
 
 ###  https://linked.data.gov.au/org/qsi
 <https://linked.data.gov.au/org/qsi> rdf:type owl:NamedIndividual ,

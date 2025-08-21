@@ -21,16 +21,16 @@ This model is built on a small set of well-regarded Semantic Web models which us
 | `als` | `https://linked.data.gov.au/def/address-lifecycle-stage-type/` | Address Lifecycle Stage Types vocabulary
 | `apt` | `https://linked.data.gov.au/def/address-part-type/` | Address Part Types vocabulary
 | `asgsed3` | `https://linked.data.gov.au/dataset/asgsed3` | Australian Statistical Geographies Standard Dataset, Release 3
-| `cn` | `https://linked.data.gov.au/def/cn` | Compound Naming Model
+| `cn` | `https://linked.data.gov.au/def/cn/` | Compound Naming Model
 | `ex` | `http://example.com/` | Generic examples
 | `geo` | `http://www.opengis.net/ont/geosparql#` | OGC GeoSPARQL
 | `gt` | `http://www.opengis.net/ont/geocode-types/` | Geocode types vocabulary
-| `ls` | `https://linked.data.gov.au/def/lifecycel` | Lifecycle Model
+| `ls` | `https://linked.data.gov.au/def/lifecycle/` | Lifecycle Model
 | `owl` | `http://www.w3.org/2002/07/owl#` | Web Ontology Language ontology
 | `rdf` | `http://www.w3.org/1999/02/22-rdf-syntax-ns#` | The RDF Concepts Vocabulary
 | `rdfs` | `http://www.w3.org/2000/01/rdf-schema#` | RDF Schema ontology
 | `sosa` | `http://www.w3.org/ns/sosa/` | Sensor, Observation, Sample, and Actuator ontology
-| `sdo` | `https://schema.org` | schema.org model
+| `schema` | `https://schema.org/` | schema.org model
 | `skos` | `http://www.w3.org/2004/02/skos/core#` | Simple Knowledge Organization System (SKOS) ontology
 | `time` | `http://www.w3.org/2006/time#` | Time Ontology in OWL
 | `void` | `http://rdfs.org/ns/void#` | Vocabulary of Interlinked Data (VoID) ontology

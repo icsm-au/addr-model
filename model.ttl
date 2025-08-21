@@ -200,14 +200,14 @@ ex:name-1
       time:hasBeginning [ time:inXSDDate \"1982-02-10\"^^xsd:date ] ;
       time:hasEnd [ time:inXSDDate \"1982-05-11\"^^xsd:date ] ;
     ] ;
-    sdo:additionalType <https://linked.data.gov.au/def/lifecycle-stage-types/proposed> ;
+    schema:additionalType <https://linked.data.gov.au/def/lifecycle-stage-types/proposed> ;
   ] ,
   [
     # this Stage is still in effect - no hasEnd given
     time:hasTime [
       time:hasBeginning [ time:inXSDDate \"1982-05-11\"^^xsd:date ] ;
     ] ;
-    sdo:additionalType <https://linked.data.gov.au/def/lifecycle-stage-types/current> ;
+    schema:additionalType <https://linked.data.gov.au/def/lifecycle-stage-types/current> ;
   ] ,
 .""" ;
                        skos:prefLabel "has lifecycle stage"@en .

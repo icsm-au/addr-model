@@ -472,5 +472,3 @@ ex:street-name-x
 | Range | <<Literal>>
 | Scope Note | Do not use this predicate directly, instead use one of the <<GEO, GeoSPARQL>> specialised sub-properties, such as `geo:asWKT` or `geo:asGeoJSON` to indicate Well-Known Text (see <<ISO19125-1>>) or <<GEOJSON, GeoJSON>> literal values.
 |===
-
-https://docs.ogc.org/is/22-047r1/22-047r1.html#_property_geohasserialization

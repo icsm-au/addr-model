@@ -414,7 +414,7 @@ ex:street-name-x
 |===
 
 [[additionalType]]
-==== additionalType
+==== additional type
 
 [cols="2,6"]
 |===
@@ -428,7 +428,7 @@ ex:street-name-x
 |===
 
 [[hasPart]]
-==== hasPart
+==== has part
 
 [cols="2,6"]
 |===
@@ -442,7 +442,7 @@ ex:street-name-x
 |===
 
 [[hasGeometry]]
-==== hasGeometry
+==== has geometry
 
 [cols="2,6"]
 |===
@@ -458,7 +458,7 @@ ex:street-name-x
 |===
 
 [[hasSerialization]]
-==== hasSerialization
+==== has serialization
 
 [cols="2,6"]
 |===

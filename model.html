@@ -1409,7 +1409,7 @@ ObjectP
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Expected Properties</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#isNameFor">is name for</a>, <a href="#hasPart">hasPart</a>, <a href="#hasGeocode">hasGeocode</a>, <a href="#hasLifecycleStage">has lifecycle stage</a>,</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#isNameFor">is name for</a>, <a href="#hasPart">has part</a>, <a href="#hasGeocode">hasGeocode</a>, <a href="#hasLifecycleStage">has lifecycle stage</a>,</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
@@ -1509,7 +1509,7 @@ PREFIX schema: &lt;https://schema.org/&gt;
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Expected Properties</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#hasGeometry">hasGeometry</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#hasGeometry">has geometry</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
@@ -1583,7 +1583,7 @@ ex:cadastral-parcel-x
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Expected Properties</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#additionalType">additionalType</a> - use to indicate the specialised type of a Geocode, <a href="#hasSerialization">hasSerialization</a> - use to indicate the position information of the Geocode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#additionalType">additional type</a> - use to indicate the specialised type of a Geocode, <a href="#hasSerialization">hasSerialization</a> - use to indicate the position information of the Geocode</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
@@ -1958,16 +1958,16 @@ ex:addr-1
 <p><a href="#value">value</a></p>
 </li>
 <li>
-<p><a href="#additionalType">additionalType</a></p>
+<p><a href="#additionalType">additional type</a></p>
 </li>
 <li>
-<p><a href="#hasPart">hasPart</a></p>
+<p><a href="#hasPart">has part</a></p>
 </li>
 <li>
-<p><a href="#hasGeometry">hasGeometry</a></p>
+<p><a href="#hasGeometry">has geometry</a></p>
 </li>
 <li>
-<p><a href="#hasSerialization">hasSerialization</a></p>
+<p><a href="#hasSerialization">has serialization</a></p>
 </li>
 </ul>
 </div>
@@ -2179,7 +2179,7 @@ ex:street-name-x
 </table>
 </div>
 <div class="sect3">
-<h4 id="additionalType"><a class="anchor" href="#additionalType"></a>4.2.7. additionalType</h4>
+<h4 id="additionalType"><a class="anchor" href="#additionalType"></a>4.2.7. additional type</h4>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 25%;">
@@ -2216,7 +2216,7 @@ ex:street-name-x
 </table>
 </div>
 <div class="sect3">
-<h4 id="hasPart"><a class="anchor" href="#hasPart"></a>4.2.8. hasPart</h4>
+<h4 id="hasPart"><a class="anchor" href="#hasPart"></a>4.2.8. has part</h4>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 25%;">
@@ -2253,7 +2253,7 @@ ex:street-name-x
 </table>
 </div>
 <div class="sect3">
-<h4 id="hasGeometry"><a class="anchor" href="#hasGeometry"></a>4.2.9. hasGeometry</h4>
+<h4 id="hasGeometry"><a class="anchor" href="#hasGeometry"></a>4.2.9. has geometry</h4>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 25%;">
@@ -2298,7 +2298,7 @@ ex:street-name-x
 </table>
 </div>
 <div class="sect3">
-<h4 id="hasSerialization"><a class="anchor" href="#hasSerialization"></a>4.2.10. hasSerialization</h4>
+<h4 id="hasSerialization"><a class="anchor" href="#hasSerialization"></a>4.2.10. has serialization</h4>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 25%;">
@@ -2349,7 +2349,7 @@ ex:street-name-x
 <h2 id="_vocabularies"><a class="anchor" href="#_vocabularies"></a>5. Vocabularies</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This model requires the use of vocabularies to provide values for some predicates. Values from a Geocode role type vocabulary must be used to provide value for a Geocode&#8217;s <a href="#additionalType">additionalType</a> predicate indicating the role that a Geocode plays, and similarly, values from a lifecycle stages vocabulary must be used to provide values for a Lifecycle Stage&#8217;s <a href="#additionalType">additionalType</a> predicate, indicating specialised lifecycle stage type. <a href="#additionalType">additionalType</a> is frequently use to provide specialised typing for instances of classes.</p>
+<p>This model requires the use of vocabularies to provide values for some predicates. Values from a Geocode role type vocabulary must be used to provide value for a Geocode&#8217;s <a href="#additionalType">additional type</a> predicate indicating the role that a Geocode plays, and similarly, values from a lifecycle stages vocabulary must be used to provide values for a Lifecycle Stage&#8217;s <a href="#additionalType">additional type</a> predicate, indicating specialised lifecycle stage type. <a href="#additionalType">additional type</a> is frequently use to provide specialised typing for instances of classes.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -2358,7 +2358,7 @@ ex:street-name-x
 <div class="title">Note</div>
 </td>
 <td class="content">
-See the example for <a href="#Address">Address</a> where vocabulary concepts are used for both Geocode&#8217;s and Lifecycle Stage&#8217;s <a href="#additionalType">additionalType</a> predicates.
+See the example for <a href="#Address">Address</a> where vocabulary concepts are used for both Geocode&#8217;s and Lifecycle Stage&#8217;s <a href="#additionalType">additional type</a> predicates.
 </td>
 </tr>
 </table>
@@ -2393,19 +2393,19 @@ See the example for <a href="#Address">Address</a> where vocabulary concepts are
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Address Model</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Address">Address</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#hasPart">hasPart</a>/<a href="#additionalType">additionalType</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#hasPart">has part</a>/<a href="#additionalType">additional type</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/geocode-types">ICSM&#8217;s Address Part Types</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Address Model</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Geocode">Geocode</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#additionalType">additionalType</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#additionalType">additional type</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/geocode-types">ICSM&#8217;s Geocode Roles</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Lifecycle Model</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Lifecycle Stage</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#additionalType">additionalType</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#additionalType">additional type</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/lifecycle-stage-types">ICSM&#8217;s Lifecycle Stage Types</a></p></td>
 </tr>
 </tbody>
@@ -3477,7 +3477,7 @@ Shorncliffe, QLD
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-01-21 04:57:59 UTC
+Last updated 2026-01-21 04:59:05 UTC
 </div>
 </div>
 </body>

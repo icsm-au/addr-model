@@ -536,7 +536,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Modified</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2025-02-25</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2026-01-21</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Issued</strong></p></td>
@@ -554,6 +554,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Provenance</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">This model is <a href="https://www.anzlic.gov.au">ANZLIC</a>'s <a href="https://icsm.gov.au">Intergovernmental Committee on Surveying &amp; Mapping (ICSM)</a>'s model for addressing information in Australian &amp; New Zealand.</p>
 <p class="tableblock">It was originally developed between 2021 and 2023 for Queensland Spatial Information, a unit of the then Queensland Department of Resources, to assist with their future address database design, and presented to ICSM for national adoption in early 2024.</p>
+<p class="tableblock">In 2025 and early 2026, small updates where made to ensure better alignment with and reuse of the Compound Name and Lifecycle models.</p>
 <p class="tableblock">It is informed by the ICSM&#8217;s Addressing 2035: Addressing Reform and Innovation for Australia and New Zealand, published in late 2021, which listed 'pain points' with current ANZ address models and considered future address modelling needs. This model tries to address the 10 main Requirements established by the Strategy.</p>
 <p class="tableblock">This model is also informed by both the relational database model used for the <a href="https://data.gov.au/data/dataset/geocoded-national-address-file-g-naf">G-NAF</a>, Australia&#8217;s Geocoded National Address File, and work by <a href="https://www.csiro.au">CSIRO</a> in 2018 to characterise the G-NAF in Semantic Web form, the ontology for which is online at <a href="https://linked.data.gov.au/def/gnaf" class="bare">https://linked.data.gov.au/def/gnaf</a>, as well as the <a href="https://www.iso.org">ISO</a>'s <a href="https://www.iso.org/standard/61710.html">ISO19160-1 Addressing Part 1: Conceptual model</a>.</p>
 <p class="tableblock">In 2023, several parts of this model covering general modelling and spatial modelling issues, such as lifecycle representation, spatiality itself &amp; compound naming, were extracted out into a series of mini-models that are also used by other candidate ICSM models for Place (Geographic) Names, Roads and Administrative Areas. Also, alignment to the ICSM&#8217;s national <a href="https://linked.data.gov.au/def/csdm">Cadastral Survey Data Model (CSDM)</a> was made and, as a result, this model is both much reduced in complexity, and re-uses fundamental background models used by other, related models and aligned with the only other ICSM national Semantic Web model.</p></td>
@@ -564,7 +565,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Version</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>1.0.4</strong>: 2025-02 Minor corrections<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>1.1.0</strong>: 2026-01 Better Compound Naming and Lifecycle model reuse
+<strong>1.0.4</strong>: 2025-02 Minor corrections<br>
 <strong>1.0.3</strong>: 2025-01 Extended Examples - table added<br>
 <strong>1.0.2</strong>: 2024-09 Support Vocabularies section updated to use ICSM vocabs<br>
 <strong>1.0.1</strong>: 2024-09 Geocode move to subclass of Geometry<br>
@@ -1529,7 +1531,7 @@ ex:cadastral-parcel-x
 
 # inferred
 ex:cadastral-parcel-x
-    schema:name ex:oxford ;
+    cn:hasName ex:oxford ;
 .</code></pre>
 </div>
 </div></div></td>
@@ -1994,7 +1996,7 @@ ex:addr-1
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Inverse of <code>schema:name</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Inverse of <code>cn:hasName</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Is Defined By</p></td>
@@ -2029,7 +2031,7 @@ ex:address-x
 
 ex:cadastral-object-y
     a addr:AddressableObject , geo:Feature ;
-    schema:name ex:address-x ;
+    cn:hasName ex:address-x ;
 .</code></pre>
 </div>
 </div></div></td>
@@ -3475,7 +3477,7 @@ Shorncliffe, QLD
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-01-21 02:41:41 UTC
+Last updated 2026-01-21 04:57:59 UTC
 </div>
 </div>
 </body>

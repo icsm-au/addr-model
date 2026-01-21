@@ -28,24 +28,6 @@ Examples of types of AddressableObjects are a building, a dwelling or a land par
     schema:name "Addressable Object" ;
 .
 
-:Geocode
-    a owl:Class ;
-    rdfs:isDefinedBy ont: ;
-    rdfs:subClassOf geo:Geometry ;
-    skos:historyNote "Derived from the G-NAF’s expression of Address position" ;
-    schema:description "A Geometry that has a persistent Role" ;
-    schema:name "Geocode" ;
-.
-
-:hasGeocode
-    a owl:ObjectProperty ;
-    rdfs:domain :Address ;
-    rdfs:isDefinedBy ont: ;
-    rdfs:range geo:Geocode ;
-    schema:description "Indicates a Geocode for this Address" ;
-    schema:name "has geocode" ;
-.
-
 <https://kurrawong.ai>
     a schema:Organization ;
     schema:name "KurrawongAI" ;

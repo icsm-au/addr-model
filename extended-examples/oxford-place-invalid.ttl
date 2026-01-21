@@ -6,7 +6,7 @@
 PREFIX a: <https://linked.data.gov.au/dataset/gnaf/address/>
 PREFIX as:  <https://linked.data.gov.au/dataset/gnaf/addressSite/>
 PREFIX addr: <https://linked.data.gov.au/def/addr/>
-PREFIX cad: <https://w3id.org/profile/cad/>
+PREFIX cad: <https://linked.data.gov.au/def/cad/>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX geo: <http://www.opengis.net/ont/geosparql#>
 PREFIX actiso: <http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressComponentType/>

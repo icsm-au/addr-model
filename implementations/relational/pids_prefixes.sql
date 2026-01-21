@@ -9,7 +9,7 @@ CREATE TABLE pids_prefixes
 INSERT INTO pids_prefixes (prefix, iri) VALUES ('a', 'https://linked.data.gov.au/dataset/gnaf/address/');
 INSERT INTO pids_prefixes (prefix, iri) VALUES ('addr', 'https://linked.data.gov.au/def/addr/');
 INSERT INTO pids_prefixes (prefix, iri) VALUES ('asgsed3-ste', 'https://linked.data.gov.au/dataset/asgsed3/STE/');
-INSERT INTO pids_prefixes (prefix, iri) VALUES ('cad', 'https://w3id.org/profile/cad/');
+INSERT INTO pids_prefixes (prefix, iri) VALUES ('cad', 'https://linked.data.gov.au/def/cad/');
 INSERT INTO pids_prefixes (prefix, iri) VALUES ('dcterms', 'http://purl.org/dc/terms/');
 INSERT INTO pids_prefixes (prefix, iri) VALUES ('ex', 'http://example.com/');
 INSERT INTO pids_prefixes (prefix, iri) VALUES ('geo', 'http://www.opengis.net/ont/geosparql#');

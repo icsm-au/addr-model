@@ -29,14 +29,14 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 <https://linked.data.gov.au/org/qsi>
     a schema:Organization ;
-    schema:name "Spatial Information Queensland"@en ;
+    cn:hasName "Spatial Information Queensland"@en ;
     schema:url "https://qldspatial.information.qld.gov.au"^^xsd:anyURI ;
 .
 
 <https://orcid.org/0000-0002-8742-7730>
     a schema:Person ;
     schema:email "nick@kurrawong.ai"^^xsd:anyURI ;
-    schema:name "Nicholas J. Car"@en ;
+    cn:hasName "Nicholas J. Car"@en ;
     schema:memberOf <https://kurrawong.ai> ;
 .
 

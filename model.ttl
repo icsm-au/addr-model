@@ -1,580 +1,101 @@
-@prefix : <https://linked.data.gov.au/def/addr/> .
-@prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
-@prefix geo: <http://www.opengis.net/ont/geosparql#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix addr: <https://linked.data.gov.au/def/addr/> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix schema: <https://schema.org/> .
-@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
-@base <https://linked.data.gov.au/def/addr/> .
+PREFIX : <https://linked.data.gov.au/def/addr/>
+PREFIX cn: <http://linked.data.gov.au/def/cn/>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX ont: <https://linked.data.gov.au/def/addr>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX schema: <https://schema.org/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-<https://linked.data.gov.au/def/addr> rdf:type owl:Ontology ;
-                                       owl:versionIRI <https://linked.data.gov.au/def/addr/1.0.0> ;
-                                       skos:historyNote """This ontology was made initially for the Queensland Department of Resources, Spatial Information unit to assist with future Address database design. It was informed by the ICSM's Addressing 2035: Addressing Reform and Innovation for Australia and New Zealand, published in late 2021 and is based primarilty on the ISO19160-1 Addressing Part 1: Conceptual model with additional elements from a small set of well-regarded Semantic Web models such as GeoSPARQL and SKOS. It is also informed by the relational databalse model used for the G-NAF, Australia's Geocoded National Address File, and CSIRO work in 2018 to characterise the GNAF in Sematic Web form, the ontlogy for which is online at https:linked.data.gov.au/def/gnaf.
-
-In 2024, this model was addopted by the ICSM's Addressing Working Group as the national addressing model."""@en ;
-                                       owl:versionInfo "1.0.0" ;
-                                       skos:definition "This model is a Semantic Web data model used for address information. It caters specifically for Australian & New Zealand's address modelling needs."@en ;
-                                       skos:prefLabel "Address Model"@en ;
-                                       schema:codeRepository "https://github.com/Spatial-Information-QLD/address-model/"^^xsd:anyURI ;
-                                       schema:copyrightHolder <https://linked.data.gov.au/org/icsm> ;
-                                       schema:copyrightNotice "(c) The State of Queensland (Department of Resources) 2020-2023" ;
-                                       schema:creator <https://orcid.org/0000-0002-8742-7730> ;
-                                       schema:dateCreated "2021-12-16"^^xsd:date ;
-                                       schema:dateIssued "2023-06-30"^^xsd:date ;
-                                       schema:dateModified "2025-08-22"^^xsd:date ;
-                                       schema:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
-                                       schema:publisher <https://linked.data.gov.au/org/icsm> ;
-                                       <https://schmea.org/contributor> <https://linked.data.gov.au/org/qsi> .
-
-#################################################################
-#    Annotation properties
-#################################################################
-
-###  http://purl.org/dc/terms/provenance
-dcterms:provenance rdf:type owl:AnnotationProperty .
-
-
-###  http://www.w3.org/2004/02/skos/core#definition
-skos:definition rdf:type owl:AnnotationProperty .
-
-
-###  http://www.w3.org/2004/02/skos/core#example
-skos:example rdf:type owl:AnnotationProperty .
-
-
-###  http://www.w3.org/2004/02/skos/core#prefLabel
-skos:prefLabel rdf:type owl:AnnotationProperty .
-
-
-###  http://www.w3.org/2004/02/skos/core#scopeNote
-skos:scopeNote rdf:type owl:AnnotationProperty .
-
-
-###  http://www.w3.org/2004/02/skos/core#usageNote
-skos:usageNote rdf:type owl:AnnotationProperty .
-
-
-###  https://schema.org/codeRepository
-schema:codeRepository rdf:type owl:AnnotationProperty .
-
-
-###  https://schema.org/copyrightHolder
-schema:copyrightHolder rdf:type owl:AnnotationProperty .
-
-
-###  https://schema.org/copyrightNotice
-schema:copyrightNotice rdf:type owl:AnnotationProperty .
-
-
-###  https://schema.org/creator
-schema:creator rdf:type owl:AnnotationProperty .
-
-
-###  https://schema.org/dateCreated
-schema:dateCreated rdf:type owl:AnnotationProperty .
-
-
-###  https://schema.org/dateIssued
-schema:dateIssued rdf:type owl:AnnotationProperty .
-
-
-###  https://schema.org/dateModified
-schema:dateModified rdf:type owl:AnnotationProperty .
-
-
-###  https://schema.org/email
-schema:email rdf:type owl:AnnotationProperty .
-
-
-###  https://schema.org/license
-schema:license rdf:type owl:AnnotationProperty .
-
-
-###  https://schema.org/memberOf
-schema:memberOf rdf:type owl:AnnotationProperty .
-
-
-###  https://schema.org/name
-schema:name rdf:type owl:AnnotationProperty .
-
-
-###  https://schema.org/publisher
-schema:publisher rdf:type owl:AnnotationProperty .
-
-
-###  https://schema.org/url
-schema:url rdf:type owl:AnnotationProperty .
-
-
-###  https://schmea.org/contributor
-<https://schmea.org/contributor> rdf:type owl:AnnotationProperty .
-
-
-#################################################################
-#    Datatypes
-#################################################################
-
-###  http://www.w3.org/2001/XMLSchema#date
-xsd:date rdf:type rdfs:Datatype .
-
-
-#################################################################
-#    Object Properties
-#################################################################
-
-###  https://linked.data.gov.au/def/addr/hasAddress
-addr:hasAddress rdf:type owl:ObjectProperty ;
-                rdfs:domain addr:AddressableObject ;
-                rdfs:range addr:Address ;
-                dcterms:provenance "Derived from ISO19160-1's object relations"@en ;
-                rdfs:isDefinedBy <https://linked.data.gov.au/def/addr> ;
-                skos:definition "Indicates an Address has been allocated for an Addressable Object"@en ;
-                skos:example """# the addr:AddressableObject, some-addressable-object,
-# indicates an address with addr:hasAddress
-<some-addressable-object>
-  a addr:AddressableObject ;
-  addr:hasAddress ex:addr-1 ;
+:Address
+    a owl:Class ;
+    rdfs:isDefinedBy ont: ;
+    rdfs:subClassOf cn:CompoundName ;
+    skos:historyNote "Derived from ISO19160-1's Address class" ;
+    schema:description "The Address class represents structured information that allows unambiguous identification of an object for the purposes of identification and location" ;
+    schema:name "Address" ;
 .
 
-ex:addr-1
-  a addr:Address ;
-.""" ;
-                skos:prefLabel "has address"@en .
+:AddressableObject
+    a owl:Class ;
+    rdfs:isDefinedBy ont: ;
+    rdfs:subClassOf geo:Feature ;
+    skos:historyNote "Derived from ISO19160-1's AddressableObject class and its associated codelist of subtypes" ;
+    schema:description """An object that is unambiguously identified by an address.
 
-
-###  https://linked.data.gov.au/def/addr/hasAddressComponent
-addr:hasAddressComponent rdf:type owl:ObjectProperty ;
-                         rdfs:domain addr:Address ;
-                         rdfs:range addr:AddressComponent ;
-                         dcterms:provenance "Derived from ISO19160-1's object relations"@en ;
-                         rdfs:isDefinedBy <https://linked.data.gov.au/def/addr> ;
-                         skos:definition "Indicates an Address Component of an Address"@en ;
-                         skos:example """# an Address has an Address Component, a street number, indicated
-ex:addr-1
-  a addr:Address ;
-  addr:hasAddressComponent [
-      schema:value 20 ;
-      dcterms:type addrct:streetNumber ;
-    ] ,
-...""" ;
-                         skos:prefLabel "has address component"@en .
-
-
-###  https://linked.data.gov.au/def/addr/hasGeocode
-addr:hasGeocode rdf:type owl:ObjectProperty ;
-                rdfs:domain addr:Address ;
-                rdfs:range geo:Geocode ;
-                dcterms:provenance "Derived from the G-NAF's expression of Address position"@en ;
-                rdfs:isDefinedBy <https://linked.data.gov.au/def/addr> ;
-                skos:definition "Indicates a refined, that is a very accurate or specific, geometry, usually a point, for an Address qualified by the Geocode Type - how it was generated."@en ;
-                skos:example """# An Address with a geocode and a role
-    ex:addr-1
-  a addr:Address ;
-    addr:hasGeocode [
-      dcterms:type geocodeType:DF ;  # Driveway Frontage
-      geo:hasGeometry \"POINT (152.01 -35.03)\"^^geo:wktLiteral ;
-    ] ;
-    addre:hasRole addr:buildingAccessPoint ;
-    ...""" ;
-                skos:prefLabel "has geocode"@en ;
-                skos:scopeNote "This property, along with hasRole, allows multiple Addresses with different locations to be allocated to Addressable Objects and for those addresses to be used for different purposes. The location indicated by this property should be within/on/next to the location of the Addressable Object this Address is for, within some acceptable tolerance."@en .
-
-
-###  https://linked.data.gov.au/def/addr/hasLifecycleStage
-addr:hasLifecycleStage rdf:type owl:ObjectProperty ;
-                       rdfs:domain addr:Address ;
-                       rdfs:range addr:LifecycleStage ;
-                       skos:definition "Indicates a Lifecycle Stage of a Resource"@en ;
-                       skos:example """# showing lifecycle stages for an Address
-ex:name-1
-  a addr:Address ;
-  :hasLifeCycleStage [
-    # this Stage has ceased
-    time:hasTime [
-      time:hasBeginning [ time:inXSDDate \"1982-02-10\"^^xsd:date ] ;
-      time:hasEnd [ time:inXSDDate \"1982-05-11\"^^xsd:date ] ;
-    ] ;
-    schema:additionalType <https://linked.data.gov.au/def/lifecycle-stage-types/proposed> ;
-  ] ,
-  [
-    # this Stage is still in effect - no hasEnd given
-    time:hasTime [
-      time:hasBeginning [ time:inXSDDate \"1982-05-11\"^^xsd:date ] ;
-    ] ;
-    schema:additionalType <https://linked.data.gov.au/def/lifecycle-stage-types/current> ;
-  ] ,
-.""" ;
-                       skos:prefLabel "has lifecycle stage"@en .
-
-
-###  https://linked.data.gov.au/def/addr/isAddressFor
-addr:isAddressFor rdf:type owl:ObjectProperty ;
-                  rdfs:domain addr:Address ;
-                  rdfs:range addr:AddressableObject ;
-                  dcterms:provenance "Derived from ISO19160-1's object relations"@en ;
-                  rdfs:isDefinedBy <https://linked.data.gov.au/def/addr> ;
-                  skos:definition "Indicates an Addressable Object that an Address is allocated to"@en ;
-                  skos:example """# the Address ex:addr-x is allocated to
-# some Addressable Object, y
-ex:addr-x
-  a addr:Address ;
-  addr:isAddressFor ex:addressable-object-y ;
-.""" ;
-                  skos:prefLabel "is address for"@en .
-
-
-###  https://schema.org/additionalType
-schema:additionalType rdf:type owl:ObjectProperty ;
-                      skos:definition """# an Address has an Address Component with its type,
-# street number, indicated
-ex:addr-1
-    a addr:Address ;
-    addr:hasAddressComponent [
-        schema:value 20 ;
-        schema:additionalType addrct:streetNumber ;
-    ] ,
-...""" ,
-                                      "An additional type for the item, typically used for adding more specific types from external vocabularies." ;
-                      skos:prefLabel "additional type"@en .
-
-
-###  https://schema.org/roleName
-schema:roleName rdf:type owl:ObjectProperty ;
-                skos:example """# An Address with two roles
-ex:addr-1
-  a addr:Address ;
-  schema:roleName
-    ex:emergencyAccess ,
-    buildingAccessPoint ;
-    ...""" ;
-                skos:prefLabel "role name"@en ;
-                skos:scopeNote "When used with the class Address, usage is based on ISO19160-1's AddressPosition class and properties" .
-
-
-#################################################################
-#    Data properties
-#################################################################
-
-###  https://schema.org/value
-schema:value rdf:type owl:DatatypeProperty ;
-             rdfs:isDefinedBy <https://schema.org> ;
-             skos:definition "The value of something"@en ;
-             skos:example """ex:addr-1
-  a addr:Address ;
-  addr:hasAddressComponent
-    [
-      # \"StreetNumber\" type
-      schema:value 20 ;
-      schema:additionalType addrct:streetNumber ;
-    ] ,
-    [
-      # \"StreetName\" type
-      schema:value \"Oxford\" ;
-      schema:additionalType addrct:thoroughfareName ;
-    ] ,
-    [
-      # \"Locality\" type
-      schema:value <http://example.com/lga/1234> ;
-      schema:additionalType addrct:locality ;
-    ] ,
-    ...""" ;
-             skos:prefLabel "value"@en ;
-             skos:scopeNote "This property is to be used to represent the textual value of Address Components that are literals and also complex objects. For a literal, the same value will be present for hasValue and hasValueText, e.g. a street number of 20 or a property name of 'Bonnie Doon', however for a complex object, e.g. the locality <http://example.com/lga/1234>, a textual representation of it must be selected. Likely a simple name for the object will do, i.e. a Locality name or a Street Locality name."@en .
-
-
-#################################################################
-#    Classes
-#################################################################
-
-###  http://linked.data.gov.au/def/cn/CompoundName
-<http://linked.data.gov.au/def/cn/CompoundName> rdf:type owl:Class ;
-                                                skos:prefLabel "Compound Name"@en .
-
-
-###  http://www.opengis.net/ont/geosparql#Feature
-geo:Feature rdf:type owl:Class ;
-            rdfs:subClassOf geo:SpatialObject .
-
-
-###  http://www.opengis.net/ont/geosparql#Geocode
-geo:Geocode rdf:type owl:Class ;
-            rdfs:subClassOf geo:Geometry ;
-            dcterms:provenance "Derived from the G-NAF’s expression of Address position"@en ;
-            rdfs:isDefinedBy <https://linked.data.gov.au/def/addr> ;
-            skos:example """# An Address with a Geocode and a role
-ex:addr-1
-  a addr:Address ;
-  addr:hasGeocode [
-    schema:additionalType addr:buildingAccessPoint ;
-    geo:asWKT \"POINT (152.01 -35.03)\"^^geo:wktLiteral ;  # specialised form of hasSerialization
-  ] ;
-  ...""" ;
-            skos:prefLabel "Geocode"@en ;
-            skos:scopeNote "Indicating a Geocode for an Address is a direct method of positioning the Address on the earth. Addresses may also be located by reference to an Addressable Object which is an indirect method. This model does not indicate any Geocode / Addressable Object geometry relations, although they may exist"@en .
-
-
-###  http://www.opengis.net/ont/geosparql#Geometry
-geo:Geometry rdf:type owl:Class ;
-             rdfs:subClassOf geo:SpatialObject .
-
-
-###  http://www.opengis.net/ont/geosparql#SpatialObject
-geo:SpatialObject rdf:type owl:Class .
-
-
-###  http://www.w3.org/2004/02/skos/core#Concept
-skos:Concept rdf:type owl:Class .
-
-
-###  http://www.w3.org/ns/prov#Agent
-<http://www.w3.org/ns/prov#Agent> rdf:type owl:Class .
-
-
-###  https://linked.data.gov.au/def/addr/Address
-addr:Address rdf:type owl:Class ;
-             rdfs:subClassOf <http://linked.data.gov.au/def/cn/CompoundName> ;
-             dcterms:provenance "Derived from ISO19160-1's Address class"@en ;
-             rdfs:isDefinedBy <https://linked.data.gov.au/def/addr> ;
-             skos:definition "The Address class represents structured information that allows unambiguous determination of an object for the purposes of identification and location"@en ;
-             skos:example """ex:addr-1
-  a addr:Address ;
-  addr:isAddressFor <some-external-object> ;
-  addr:hasAddressComponent
-    [
-      schema:value 20 ;
-      schema:additionalType addrct:streetNumber ;
-    ] ,
-    [
-      schema:value \"Oxford\" ;
-      schema:additionalType addrct:thoroughfareName ;
-    ] ,
-    [
-      schema:value strt:Place ;  # \"Place\"
-      schema:additionalType addct:StreetType ;
-    ] ,
-    [
-      schema:value <LGA2021/1234> ;  # \"Shorncliffe\"
-      schema:additionalType addrct:localityName ;
-    ] ,
-    [
-      schema:value <STE2021/6> ;  # \"Queensland\"
-      schema:additionalType addct:StateOrTerritory ;
-    ] ,
-    [
-      schema:value <AUS2021/AUS> ;  # \"Australia\"
-      schema:additionalType addct:Nation ;
-    ] ;
-.""" ;
-             skos:prefLabel "Address"@en .
-
-
-###  https://linked.data.gov.au/def/addr/AddressComponent
-addr:AddressComponent rdf:type owl:Class ;
-                      dcterms:provenance "Derived from ISO19160-1's AddressComponent class"@en ;
-                      rdfs:isDefinedBy <https://linked.data.gov.au/def/addr> ;
-                      skos:definition "A component that is a constituent part of an address"@en ;
-                      skos:example """ex:addr-1
-  a addr:Address ;
-  addr:hasAddressComponent
-    [
-      # a simple numerical literal - street number
-      schema:value 20 ;
-      schema:additionalType addrct:streetNumber ;
-    ] ,
-    [
-      # a simple literal - street name
-      schema:value \"Oxford\" ;
-      schema:additionalType addrct:thoroughfareName ;
-    ] ,
-    [
-      # complex object - a Locality
-      schema:value <http://example.com/lga/1234> ;  # \"Shorncliffe\"
-      schema:additionalType addrct:localityName ;
-    ] ,
-    ...""" ;
-                      skos:prefLabel "Address Component"@en ;
-                      skos:scopeNote """Address Components can be literals - numbers, words etc. - or complex ojects - Localities, districtes etc. If the Address Component is a complex object, a textual representation of it must be provided when a textual rendering of all of an Addresses' component are required, for example for letter printing.
-
-Complex objects are preferred for use over literals when the object referred to has independent identity.
-
-Ordering of Address Components, for example for letter printing, is not fixed within this model but should be implemented with a positioning preference system utilising the Address Component's `dcterms:type` values which should come from a controlled vocabulary of Address Component Type values."""@en .
-
-
-###  https://linked.data.gov.au/def/addr/AddressComponentType
-addr:AddressComponentType rdf:type owl:Class ;
-                          rdfs:subClassOf skos:Concept ;
-                          dcterms:provenance "Derived from ISO19160-1's AddressComponent class" ;
-                          rdfs:isDefinedBy <https://linked.data.gov.au/def/addr> ;
-                          skos:definition "Code that specifies the kind of address component"@en ;
-                          skos:example """ex:addr-1
-  a addr:Address ;
-  addr:hasAddressComponent
-    [
-      # \"StreetNumber\" type
-      schema:value 20 ;
-      dcterms:type addrct:streetNumber ;
-    ] ,
-    [
-      # \"StreetName\" type
-      schema:value \"Oxford\" ;
-      dcterms:type addrct:thoroughfareName ;
-    ] ,
-    [
-      # \"Locality\" type
-      schema:value <http://example.com/lga/1234> ;  # \"Shorncliffe\"
-      dcterms:type addrct:localityName ;
-    ] ,
-    ...""" ;
-                          skos:prefLabel "Address Component Type"@en ;
-                          skos:scopeNote """An Address Component's type should be indicated with values from a controlled vocabulary - a code list.
-
-A SKOS vocabulary of Address Component Types is suplied with this ontology."""@en .
-
-
-###  https://linked.data.gov.au/def/addr/AddressRole
-addr:AddressRole rdf:type owl:Class ;
-                 rdfs:subClassOf skos:Concept ;
-                 dcterms:provenance "Derived from ISO19160-1's AddressPosition & AddressPositionType classes"@en ;
-                 rdfs:isDefinedBy <https://linked.data.gov.au/def/addr> ;
-                 skos:definition "AddressRole represents a task for which this Address may be used"@en ;
-                 skos:example """# An Address with two roles
-ex:addr-1
-  a addr:Address ;
-  addr:hasAddressRole
-    ex:emergencyAccess ,
-    buildingAccessPoint ;
-    ...""" ;
-                 skos:prefLabel "Address Role"@en ;
-                 skos:usageNote "ISO19160-1 does not contain an `AddressRole` class but instead an `AddressPosition` class with positioning and role properties. This Standard make role a direct property of `Address` instead and provides for a positional qualifier (qualified against the position of the `AddressableObject`) instead to allow whole addresses to carry role tasking."@en .
-
-
-###  https://linked.data.gov.au/def/addr/AddressableObject
-addr:AddressableObject rdf:type owl:Class ;
-                       rdfs:subClassOf geo:Feature ;
-                       dcterms:provenance "Derived from ISO19160-1's AddressableObject class and its associated codelist of subtypes"@en ;
-                       rdfs:isDefinedBy <https://linked.data.gov.au/def/addr> ;
-                       skos:definition """An object that is unambiguously determined by an address.
-
-Examples of types of AddressableObjects are a building, a dwelling or a land parcel."""@en ;
-                       skos:example """# ex:parcel-x is inferred to be an Addressable object
-# due to the property addr:hasAddress indicated for it
-ex:parcel-x addr:hasAddress ex:addr-1 .
-
-# this object is declared to be an Addressable Object
-<http://example.com/building/y>
-  a addr:AddressableObject ;
-  rdfs:label \"Building Y\" ;
+Examples of types of AddressableObjects are a building, a dwelling or a land parcel""" ;
+    schema:name "Addressable Object" ;
 .
 
-# ex:admin-area-z is inferred to be an Addressable Object
-# due to the property addr:isAddressFor indicating it
-ex:addre-2 addr:isAddressFor ex:admin-area-z .""" ;
-                       skos:prefLabel "Addressable Object"@en ;
-                       skos:usageNote "Judgement as to what makes for a permissable AddressableObject rests with the implementer. This model's technical requirements are only that the object is a legal `geo:Feature` object, thus implementers may make Addressable Objects of almost anything."@en .
-
-
-###  https://linked.data.gov.au/def/addr/LifecycleStage
-addr:LifecycleStage rdf:type owl:Class ;
-                    dcterms:provenance "Derived from ISO19160-1's AddressLifecycle class"@en ;
-                    rdfs:isDefinedBy <https://linked.data.gov.au/def/addr> ;
-                    skos:definition "Represents the different lifecycle stages of an Address"@en ;
-                    skos:example """# An Address with two Lifecycle Stages indicated:
-# one current and one past
-ex:addr-1
-  a addr:Address ;
-  addr:hasLifecycleStage [
-    # this Stage has ceased
-    time:hasTime [
-      time:hasBeginning [ time:inXSDDate \"1982-02-10\"^^xsd:date ] ;
-      time:hasEnd [ time:inXSDDate \"1982-05-11\"^^xsd:date ] ;
-    ] ;
-    addr:hasLifecycleStageType addrls:proposed ;
-  ] ,
-  [
-    # this Stage is still in effect - no hasEnd given
-    time:hasTime [
-      time:hasBeginning [ time:inXSDDate \"1982-05-11\"^^xsd:date ] ;
-    ] ;
-    addr:hasLifecycleStageType addrls:current ;
-  ] ,
+:Geocode
+    a owl:Class ;
+    rdfs:isDefinedBy ont: ;
+    rdfs:subClassOf geo:Geometry ;
+    skos:historyNote "Derived from the G-NAF’s expression of Address position" ;
+    schema:description "A Geometry that has a persistent Role" ;
+    schema:name "Geocode" ;
 .
 
-# The Address Lifecycle Stage 'proposed'
-# from the Address Lifecycle Stage Types vocabulary
-# indicating only some properties
-addrls:proposed
-    a skos:Concept ;
-    ...
-    skos:prefLabel \"Proposed\" ;
-.""" ;
-                    skos:prefLabel "Lifecycle Stage"@en ;
-                    skos:scopeNote """An Address Lifecycle Stage's type should be indicated with values from a controlled vocabulary - a code list.
+:hasGeocode
+    a owl:ObjectProperty ;
+    rdfs:domain :Address ;
+    rdfs:isDefinedBy ont: ;
+    rdfs:range geo:Geocode ;
+    schema:description "Indicates a Geocode for this Address" ;
+    schema:name "has geocode" ;
+.
 
-A SKOS vocabulary of Address Lifecycle Stages is suplied with this ontology.
+<https://kurrawong.ai>
+    a schema:Organization ;
+    schema:name "KurrawongAI" ;
+    schema:url "https://kurrawong.ai"^^xsd:anyURI ;
+.
 
-In this model, these Lifecycle Stages are defined for use with Addresses only, not also Address Components, as per ISO19160-1."""@en .
+<https://linked.data.gov.au/org/qsi>
+    a schema:Organization ;
+    schema:name "Spatial Information Queensland" ;
+    schema:url "https://qldspatial.information.qld.gov.au"^^xsd:anyURI ;
+.
 
+<https://orcid.org/0000-0002-8742-7730>
+    a schema:Person ;
+    schema:email "nick@kurrawong.ai"^^xsd:anyURI ;
+    schema:memberOf <https://kurrawong.ai> ;
+    schema:name "Nicholas J. Car" ;
+.
 
-###  https://linked.data.gov.au/def/addr/LifecycleStageType
-addr:LifecycleStageType rdf:type owl:Class ;
-                        rdfs:subClassOf skos:Concept ;
-                        dcterms:provenance "Derived from ISO19160-1's AddressLifecycle class"@en ;
-                        rdfs:isDefinedBy <https://linked.data.gov.au/def/addr> ;
-                        skos:definition "Code that specifies the kind of Address Lifecycle Stage"@en ;
-                        skos:example """# An Address with a Lifecycle Stages indicated
-# which then indicates its type
-ex:addr-1
-  a addr:Address ;
-  addr:hasLifecycleStage [
-    ...
-    addr:hasLifecycleStageType addrls:proposed ;
-  ] ;
-  ...""" ;
-                        skos:prefLabel "Lifecycle Stage Type"@en ;
-                        skos:usageNote """An Address Address Lifecycle Stage's type should be indicated with values from a controlled vocabulary - a code list.
+<https://linked.data.gov.au/org/icsm>
+    a schema:Organization ;
+    schema:name "Intergovernmental Committee on Surveying & Mapping" ;
+    schema:url "https://www.icsm.gov.au"^^xsd:anyURI ;
+.
 
-A SKOS vocabulary of Address Lifecycle Stage Types is supplied with this ontology."""@en .
+ont:
+    a owl:Ontology ;
+    owl:versionIRI :1.1.0 ;
+    skos:historyNote """This model is https://www.anzlic.gov.au[ANZLIC]'s https://icsm.gov.au[Intergovernmental Committee on Surveying & Mapping (ICSM)]'s model for addressing information in Australian & New Zealand.
 
+It was originally developed between 2021 and 2023 for Queensland Spatial Information, a unit of the then Queensland Department of Resources, to assist with their future address database design, and presented to ICSM for national adoption in early 2024.
 
-###  https://schema.org/Organization
-schema:Organization rdf:type owl:Class ;
-                    rdfs:subClassOf <http://www.w3.org/ns/prov#Agent> .
+In 2025 and early 2026, small updates where made to ensure better alignment with and reuse of the Compound Name and Lifecycle models.
 
+It is informed by the ICSM's Addressing 2035: Addressing Reform and Innovation for Australia and New Zealand, published in late 2021, which listed 'pain points' with current ANZ address models and considered future address modelling needs. This model tries to address the 10 main Requirements established by the Strategy.
 
-###  https://schema.org/Person
-schema:Person rdf:type owl:Class ;
-              rdfs:subClassOf <http://www.w3.org/ns/prov#Agent> .
+This model is also informed by both the relational database model used for the https://data.gov.au/data/dataset/geocoded-national-address-file-g-naf[G-NAF], Australia's Geocoded National Address File, and work by https://www.csiro.au[CSIRO] in 2018 to characterise the G-NAF in Semantic Web form, the ontology for which is online at https://linked.data.gov.au/def/gnaf, as well as the https://www.iso.org[ISO]'s https://www.iso.org/standard/61710.html[ISO19160-1 Addressing Part 1: Conceptual model].
 
-
-#################################################################
-#    Individuals
-#################################################################
-
-###  https://linked.data.gov.au/org/icsm
-<https://linked.data.gov.au/org/icsm> rdf:type owl:NamedIndividual ;
-                                      schema:name "Intergovernmental Committee on Surveying & Mapping" ;
-                                      schema:url "https://www.icsm.gov.au"^^xsd:anyURI .
-
-
-###  https://linked.data.gov.au/org/qsi
-<https://linked.data.gov.au/org/qsi> rdf:type owl:NamedIndividual ,
-                                              schema:Organization ;
-                                     schema:name "Spatial Information Queensland"@en ;
-                                     schema:url "https://qldspatial.information.qld.gov.au"^^xsd:anyURI .
-
-
-###  https://orcid.org/0000-0002-8742-7730
-<https://orcid.org/0000-0002-8742-7730> rdf:type owl:NamedIndividual ,
-                                                 schema:Person ;
-                                        schema:email "nick@kurrawong.ai"^^xsd:anyURI ;
-                                        schema:memberOf <https://kurrawong.ai> ;
-                                        schema:name "Nicholas J. Car"@en .
-
-
-###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
+In 2023, several parts of this model covering general modelling and spatial modelling issues, such as lifecycle representation, spatiality itself & compound naming, were extracted out into a series of mini-models that are also used by other candidate ICSM models for Place (Geographic) Names, Roads and Administrative Areas. Also, alignment to the ICSM's national https://linked.data.gov.au/def/csdm[Cadastral Survey Data Model (CSDM)] was made and, as a result, this model is both much reduced in complexity, and re-uses fundamental background models used by other, related models and aligned with the only other ICSM national Semantic Web model.""" ;
+    schema:codeRepository "https://github.com/icsm-au/addr-model"^^xsd:anyURI ;
+    schema:contributor <https://linked.data.gov.au/org/qsi> ;
+    schema:copyrightHolder <https://linked.data.gov.au/org/icsm> ;
+    schema:copyrightNotice "(c) The State of Queensland (Department of Resources) 2020-2023" ;
+    schema:creator <https://orcid.org/0000-0002-8742-7730> ;
+    schema:dateCreated "2021-12-16"^^xsd:date ;
+    schema:dateIssued "2023-06-30"^^xsd:date ;
+    schema:dateModified "2026-01-21"^^xsd:date ;
+    schema:description "The national model for address information for Australian & New Zealand, realised in Semantic Web form." ;
+    schema:license <http://purl.org/NET/rdflicense/cc-by4.0> ;
+    schema:name "ICSM ANZ Address Model" ;
+    schema:publisher <https://linked.data.gov.au/org/icsm> ;
+    schema:version "1.1.0" ;
+.

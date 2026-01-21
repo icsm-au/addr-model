@@ -122,7 +122,7 @@ ex:cadastral-parcel-x
 
 # inferred
 ex:cadastral-parcel-x
-    schema:name ex:oxford ;
+    cn:hasName ex:oxford ;
 .
 ----
 |===
@@ -306,7 +306,7 @@ ex:addr-1
 
 | IRI | `cn:isNameFor`
 | Preferred Label | is name for
-| Definition | Inverse of `schema:name`
+| Definition | Inverse of `cn:hasName`
 | Is Defined By | <<CNM>>
 | Domain | <<CompoundName>>
 | Range | <<Feature>>
@@ -327,7 +327,7 @@ ex:address-x
 
 ex:cadastral-object-y
     a addr:AddressableObject , geo:Feature ;
-    schema:name ex:address-x ;
+    cn:hasName ex:address-x ;
 .
 ----
 |===

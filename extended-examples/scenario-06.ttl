@@ -89,7 +89,7 @@ as:157942023
 
 <https://linked.data.gov.au/org/qld>
     a pn:PlaceNamingAuthority , schema:Organization ;
-    schema:name "Government of Queensland" ;
+    cn:hasName "Government of Queensland" ;
     schema:url "https://www.qld.gov.au"^^xsd:anyURI ;
 .
 

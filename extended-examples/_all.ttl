@@ -376,7 +376,7 @@ a:GAQLD163304422 a addr:Address ;
 
 <https://linked.data.gov.au/org/qld> a pn:PlaceNamingAuthority,
         schema:Organization ;
-    schema:name "Government of Queensland" ;
+    cn:hasName "Government of Queensland" ;
     schema:url "https://www.qld.gov.au"^^xsd:anyURI .
 
 ex:subplace-1 a pn:Place ;

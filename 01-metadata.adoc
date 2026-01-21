@@ -6,13 +6,15 @@
 |*Preferred Label* | ICSM ANZ Address Model
 |*Definition* | The national model for address information for Australian & New Zealand, realised in Semantic Web form
 |*Created* | 2021-12-16
-|*Modified* | 2025-02-25
+|*Modified* | 2026-01-21
 |*Issued* | 2023-06-30
 |*Creator* | https://orcid.org/0000-0002-8742-7730[Nicholas J. Car]
 |*Publisher* | https://linked.data.gov.au/org/icsm[Intergovernmental Committee  on Surveying & Mapping (ICSM)]
 |*Provenance* | This model is https://www.anzlic.gov.au[ANZLIC]'s https://icsm.gov.au[Intergovernmental Committee on Surveying & Mapping (ICSM)]'s model for addressing information in Australian & New Zealand.
 
 It was originally developed between 2021 and 2023 for Queensland Spatial Information, a unit of the then Queensland Department of Resources, to assist with their future address database design, and presented to ICSM for national adoption in early 2024.
+
+In 2025 and early 2026, small updates where made to ensure better alignment with and reuse of the Compound Name and Lifecycle models.
 
 It is informed by the ICSM's Addressing 2035: Addressing Reform and Innovation for Australia and New Zealand, published in late 2021, which listed 'pain points' with current ANZ address models and considered future address modelling needs. This model tries to address the 10 main Requirements established by the Strategy.
 
@@ -21,6 +23,7 @@ This model is also informed by both the relational database model used for the h
 In 2023, several parts of this model covering general modelling and spatial modelling issues, such as lifecycle representation, spatiality itself & compound naming, were extracted out into a series of mini-models that are also used by other candidate ICSM models for Place (Geographic) Names, Roads and Administrative Areas. Also, alignment to the ICSM's national https://linked.data.gov.au/def/csdm[Cadastral Survey Data Model (CSDM)] was made and, as a result, this model is both much reduced in complexity, and re-uses fundamental background models used by other, related models and aligned with the only other ICSM national Semantic Web model.
 |*Status* | First stable version
 |*Version* |
+*1.1.0*: 2026-01 Better Compound Naming and Lifecycle model reuse
 *1.0.4*: 2025-02 Minor corrections +
 *1.0.3*: 2025-01 Extended Examples - table added +
 *1.0.2*: 2024-09 Support Vocabularies section updated to use ICSM vocabs +

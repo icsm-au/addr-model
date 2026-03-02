@@ -30,4 +30,4 @@ The validators given above may be applied to RDF data implementations of this mo
 
 See the example data for <<Address>> class. A copy of it is also stored in this model's version control repository as well as an extended example that contains all the additions needed to be valid accordin to the canonical validator. See
 
-* [Extended Example > Address Class E.G.](https://github.com/icsm-au/addr-model/tree/main/extended-examples)
+* https://github.com/icsm-au/addr-model/tree/main/extended-examples/address-class-eg[Extended Example > Address Class E.G.]

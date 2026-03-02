@@ -66,17 +66,22 @@ PREFIX schema: <https://schema.org/>
         schema:value <https://linked.data.gov.au/dataset/qldaddr/locality/loc38f189794e03> ;  # "Shorncliffe"
     ] ,
     [
-        schema:additionalType apt:administrativeArea ;
+        schema:additionalType apt:stateOrTerritory ;
         schema:value <https://linked.data.gov.au/dataset/asgsed3/STE/3> ; # "Queensland"
     ] ,
     [
         schema:additionalType apt:postcode ;
         schema:value 4017
+    ] ,
+    [
+        schema:additionalType apt:country ;
+        schema:value <https://linked.data.gov.au/dataset/asgsed3/AUS/AUS> ; # "Australia"
     ] ;
     addr:hasGeocode [
-        a addr:Geocode ;
-        schema:additionalType <https://linked.data.gov.au/def/geocode-types/property-centroid> ;
-        geo:asWKT "POINT(153.0846 -27.3270)"^^geo:wktLiteral ;
+        schema:roleName <https://linked.data.gov.au/def/geocode-types/property-centroid> ;
+        schema:value [
+            geo:asWKT "POINT(153.0846 -27.3270)"^^geo:wktLiteral ;
+        ] ;
     ] ;
     cn:isNameFor ex-parcel:161162441 ;
     ls:hasLifecycleStage [
@@ -273,7 +278,7 @@ ex:addr-1
 * <<hasGeocode>>
 
 [[hasGeocode]]
-==== hasGeocode
+==== has geocode
 
 [cols="2,6"]
 |===

@@ -1,3 +1,5 @@
+# same information as the 20-oxford-eg.ttl file but with classes indicated
+
 PREFIX addr: <https://linked.data.gov.au/def/addr/>
 PREFIX apt: <http://linked.data.gov.au/def/address-part-types/>
 PREFIX cn: <https://linked.data.gov.au/def/cn/>

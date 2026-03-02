@@ -6,7 +6,7 @@
 |*Preferred Label* | ICSM ANZ Address Model
 |*Definition* | The national model for address information for Australian & New Zealand, realised in Semantic Web form
 |*Created* | 2021-12-16
-|*Modified* | 2026-01-21
+|*Modified* | 2026-03-02
 |*Issued* | 2023-06-30
 |*Creator* | https://orcid.org/0000-0002-8742-7730[Nicholas J. Car]
 |*Publisher* | https://linked.data.gov.au/org/icsm[Intergovernmental Committee  on Surveying & Mapping (ICSM)]
@@ -23,7 +23,8 @@ This model is also informed by both the relational database model used for the h
 In 2023, several parts of this model covering general modelling and spatial modelling issues, such as lifecycle representation, spatiality itself & compound naming, were extracted out into a series of mini-models that are also used by other candidate ICSM models for Place (Geographic) Names, Roads and Administrative Areas. Also, alignment to the ICSM's national https://linked.data.gov.au/def/csdm[Cadastral Survey Data Model (CSDM)] was made and, as a result, this model is both much reduced in complexity, and re-uses fundamental background models used by other, related models and aligned with the only other ICSM national Semantic Web model.
 |*Status* | First stable version
 |*Version* |
-*1.1.0*: 2026-01 Better Compound Naming and Lifecycle model reuse
+*1.1.1*: 2026-03 Fix class examples & update validator +
+*1.1.0*: 2026-01 Better Compound Naming and Lifecycle model reuse +
 *1.0.4*: 2025-02 Minor corrections +
 *1.0.3*: 2025-01 Extended Examples - table added +
 *1.0.2*: 2024-09 Support Vocabularies section updated to use ICSM vocabs +
@@ -31,6 +32,6 @@ In 2023, several parts of this model covering general modelling and spatial mode
 *1.0.0*: 2024-06 As approved by ICSM for national use +
 |*Code Repository* | https://github.com/icsm-au/addr-model
 |*License* | https://creativecommons.org/licenses/by/4.0/[Creative Commons Attribution 4.0 International (CC BY 4.0)]
-|*Copyright* | &copy; The State of Queensland (Department of Natural Resources and Mines, Manufacturing, and Regional and Rural Development) 2020-2023, Intergovernmental Committee on Surveying & Mapping, 2025
+|*Copyright* | &copy; The State of Queensland (Department of Natural Resources and Mines, Manufacturing, and Regional and Rural Development) 2020-2023, Intergovernmental Committee on Surveying & Mapping, 2026
 |*Machine-readable form (RDF)* | https://linked.data.gov.au/def/addr.ttl
 |===

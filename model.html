@@ -483,8 +483,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li><a href="#AnnexB">Annex B: Validation</a>
 <ul class="sectlevel2">
-<li><a href="#_b_1_example_validators">B.1 Example Validators</a></li>
+<li><a href="#_b_1_provided_validators">B.1 Provided Validators</a></li>
 <li><a href="#_b_2_performing_validation">B.2 Performing validation</a></li>
+<li><a href="#_b_3_example_validation_data">B.3 Example Validation data</a></li>
 </ul>
 </li>
 <li><a href="#AnnexC">Annex C: Templating</a>
@@ -536,7 +537,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Modified</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2026-01-21</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2026-03-02</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Issued</strong></p></td>
@@ -565,7 +566,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Version</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>1.1.0</strong>: 2026-01 Better Compound Naming and Lifecycle model reuse
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>1.1.1</strong>: 2026-03 Fix class examples &amp; update validator<br>
+<strong>1.1.0</strong>: 2026-01 Better Compound Naming and Lifecycle model reuse<br>
 <strong>1.0.4</strong>: 2025-02 Minor corrections<br>
 <strong>1.0.3</strong>: 2025-01 Extended Examples - table added<br>
 <strong>1.0.2</strong>: 2024-09 Support Vocabularies section updated to use ICSM vocabs<br>
@@ -582,7 +584,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Copyright</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&copy; The State of Queensland (Department of Natural Resources and Mines, Manufacturing, and Regional and Rural Development) 2020-2023, Intergovernmental Committee on Surveying &amp; Mapping, 2025</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&copy; The State of Queensland (Department of Natural Resources and Mines, Manufacturing, and Regional and Rural Development) 2020-2023, Intergovernmental Committee on Surveying &amp; Mapping, 2026</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Machine-readable form (RDF)</strong></p></td>
@@ -1409,7 +1411,7 @@ ObjectP
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Expected Properties</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#isNameFor">is name for</a>, <a href="#hasPart">has part</a>, <a href="#hasGeocode">hasGeocode</a>, <a href="#hasLifecycleStage">has lifecycle stage</a>,</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#isNameFor">is name for</a>, <a href="#hasPart">has part</a>, <a href="#hasGeocode">has geocode</a>, <a href="#hasLifecycleStage">has lifecycle stage</a>,</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
@@ -1441,17 +1443,22 @@ PREFIX schema: &lt;https://schema.org/&gt;
         schema:value &lt;https://linked.data.gov.au/dataset/qldaddr/locality/loc38f189794e03&gt; ;  # "Shorncliffe"
     ] ,
     [
-        schema:additionalType apt:administrativeArea ;
+        schema:additionalType apt:stateOrTerritory ;
         schema:value &lt;https://linked.data.gov.au/dataset/asgsed3/STE/3&gt; ; # "Queensland"
     ] ,
     [
         schema:additionalType apt:postcode ;
         schema:value 4017
+    ] ,
+    [
+        schema:additionalType apt:country ;
+        schema:value &lt;https://linked.data.gov.au/dataset/asgsed3/AUS/AUS&gt; ; # "Australia"
     ] ;
     addr:hasGeocode [
-        a addr:Geocode ;
-        schema:additionalType &lt;https://linked.data.gov.au/def/geocode-types/property-centroid&gt; ;
-        geo:asWKT "POINT(153.0846 -27.3270)"^^geo:wktLiteral ;
+        schema:roleName &lt;https://linked.data.gov.au/def/geocode-types/property-centroid&gt; ;
+        schema:value [
+            geo:asWKT "POINT(153.0846 -27.3270)"^^geo:wktLiteral ;
+        ] ;
     ] ;
     cn:isNameFor ex-parcel:161162441 ;
     ls:hasLifecycleStage [
@@ -1898,13 +1905,13 @@ ex:addr-1
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#hasGeocode">hasGeocode</a></p>
+<p><a href="#hasGeocode">has geocode</a></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="hasGeocode"><a class="anchor" href="#hasGeocode"></a>4.2.2. hasGeocode</h4>
+<h4 id="hasGeocode"><a class="anchor" href="#hasGeocode"></a>4.2.2. has geocode</h4>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
 <col style="width: 25%;">
@@ -2917,28 +2924,28 @@ Hyperlinks to these vocabularies will be provided as soon as persistent identifi
 <p>The validation system proposed for use with this model is the <em>Shapes Constraint Language (SHACL)</em> <a href="#SHACL">SHACL</a> which implements validators for <a href="#RDF">RDF</a> data.</p>
 </div>
 <div class="sect2">
-<h3 id="_b_1_example_validators"><a class="anchor" href="#_b_1_example_validators"></a>B.1 Example Validators</h3>
+<h3 id="_b_1_provided_validators"><a class="anchor" href="#_b_1_provided_validators"></a>B.1 Provided Validators</h3>
 <div class="paragraph">
 <p>Two example validators are provided with this model:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><a href="https://github.com/Spatial-Information-QLD/address-model/validator.ttl">validator.ttl</a> - a canonical validator for this model</p>
+<p><a href="https://github.com/icsm-au/addr-model/blob/main/validator.ttl">validator.ttl</a> - a canonical validator for this model</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Test that every Address indicates: an Addressable Object with <code>cn:isNameFor</code>; a Geocode with <code>addr:hasGeocode</code>; at least one part, that is a Compound Name, with <code>schema:hasPart</code></p>
+<p>Test that every Address indicates: an Addressable Object with <code>cn:isNameFor</code>; a Geocode with <code>addr:hasGeocode</code>; at least one part, that is a Compound Name, with <code>schema:hasPart</code> etc</p>
 </li>
 </ol>
 </div>
 </li>
 <li>
-<p><a href="https://github.com/Spatial-Information-QLD/address-model/blob/main/validator-qld.ttl">validator-qld.ttl</a> a validator for a jurisdiction - Queensland</p>
+<p><a href="https://github.com/icsm-au/addr-model/blob/main/validator-qld.ttl">validator-qld.ttl</a> a validator for a jurisdiction - Queensland</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Test that every Address indicates at least 3 parts</p>
+<p>Tests that every Address indicates at least 3 parts - just for demonstration</p>
 </li>
 </ol>
 </div>
@@ -2974,7 +2981,7 @@ Hyperlinks to these vocabularies will be provided as soon as persistent identifi
 </div>
 </li>
 <li>
-<p><a href="http://rdftools.kurrawong.net/validate">RDFTools Validator</a></p>
+<p><a href="https://tools.kurrawong.ai/validate">KurrawongAI&#8217;s Validator</a></p>
 <div class="ulist">
 <ul>
 <li>
@@ -2985,6 +2992,19 @@ Hyperlinks to these vocabularies will be provided as soon as persistent identifi
 </li>
 </ul>
 </div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_b_3_example_validation_data"><a class="anchor" href="#_b_3_example_validation_data"></a>B.3 Example Validation data</h3>
+<div class="paragraph">
+<p>See the example data for <a href="#Address">Address</a> class. A copy of it is also stored in this model&#8217;s version control repository as well as an extended example that contains all the additions needed to be valid accordin to the canonical validator. See</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>[Extended Example &gt; Address Class E.G.](<a href="https://github.com/icsm-au/addr-model/tree/main/extended-examples" class="bare">https://github.com/icsm-au/addr-model/tree/main/extended-examples</a>)</p>
 </li>
 </ul>
 </div>
@@ -3477,7 +3497,7 @@ Shorncliffe, QLD
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-01-21 05:39:54 UTC
+Last updated 2026-03-02 03:44:18 UTC
 </div>
 </div>
 </body>

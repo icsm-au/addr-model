@@ -6,7 +6,7 @@
 |*Preferred Label* | ICSM ANZ Address Model
 |*Definition* | The national model for address information for Australian & New Zealand, realised in Semantic Web form
 |*Created* | 2021-12-16
-|*Modified* | 2026-03-02
+|*Modified* | 2026-03-16
 |*Issued* | 2023-06-30
 |*Creator* | https://orcid.org/0000-0002-8742-7730[Nicholas J. Car]
 |*Publisher* | https://linked.data.gov.au/org/icsm[Intergovernmental Committee  on Surveying & Mapping (ICSM)]

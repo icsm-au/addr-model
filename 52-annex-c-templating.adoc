@@ -22,7 +22,8 @@ The "print out" format is as above where the Address parts, as per Queensland's 
 |===
 | Part | Value
 
-| Unit | "4B"
+| Unit | "4"
+| Unit Suffix | "B"
 | StreetNumber | "72"
 | Street | reference to the Yundah Street, road object
 | Locality | reference to the Shorncliffe locality object
@@ -38,6 +39,7 @@ Using Feature Naming recursive logic - generating names for the Road, Locality, 
 | Part | Value
 
 | Unit | "4B"
+| Unit Suffix | "B"
 | StreetNumber | "72"
 | Street | "Yundah Street"
 | Locality | "Shorncliffe"
@@ -49,7 +51,7 @@ Using Feature Naming recursive logic - generating names for the Road, Locality, 
 Thus, an informal template for the example address, given these values could be:
 
 ----
-Unit {Unit}
+Unit {Unit}{UnitSuffix}
 {StreetNumber} {Street}
 {Locality}, {StateOrTerritory}
 {Postcode} {Country}
@@ -130,7 +132,7 @@ Part values for the example above, using these EBNF tokens are:
 | `country` | "Australia"
 |===
 
-The template would result in this the same "print out" value as per the example in the section above:
+The template would result in this the same "print-out" value as per the example in the section above:
 
 ----
 The Manse
@@ -144,12 +146,14 @@ Shorncliffe, Queensland
 
 This Short Form Template is an example of an alternative template to the Basic Template above.
 
-This template uses most of the same layout logic as the Basic Template but it replaces `NEWLINE` between `building_name` & `property_name` with `space` and makes the following contractions:
+This template uses most of the same layout logic as the Basic Template, but it replaces some `NEWLINE` instnaces with `space` and doesn't render `property_name`. It also makes the following contractions:
+
+Levels & Units:
 
 * "Level X" -> Lv X
 * "Unit X," -> "X/"
 
-It contracts States & Territories as follows:
+States & Territories:
 
 * "Australian Capital Territory" -> "ACT"
 * "New South Wales" -> "NSW"
@@ -160,7 +164,7 @@ It contracts States & Territories as follows:
 * "Victoria" -> "VIC"
 * "Western Australia" -> "WA"
 
-It contracts Countries as follows:
+Countries:
 
 * "Australia" -> "Aust."
 * "New Zealand" -> "NZ"
@@ -170,7 +174,6 @@ This template will also see out short form templates implemented for referenced 
 Given these changes, the example above would print out like this:
 
 ----
-The Manse
 4B/72 Yundah St
 Shorncliffe, QLD
 4017 Aust.

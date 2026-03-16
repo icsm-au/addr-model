@@ -3015,10 +3015,10 @@ Hyperlinks to these vocabularies will be provided as soon as persistent identifi
 <h2 id="AnnexC"><a class="anchor" href="#AnnexC"></a>Annex C: Templating</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>To present - on screen or in print form - consolidated address information, such as for an envelope, the address parts need to be assembled in a particular order and perhaps processes to make contractions etc. The logic for this is not contained in core model itself but must be implemented in <em>application code</em> reflecting <em>business logic</em>, as in what it is that implementers need to implement!</p>
+<p>To present an address on screen or in print form consolidated address information, such as for an envelope, address parts need to be assembled in a particular order and perhaps processed to make contractions etc. The logic for this is not contained in the model itself but must be implemented in <em>application code</em> to reflect <em>business logic</em> - implementers' requirements.</p>
 </div>
 <div class="paragraph">
-<p>This templating annex gives a demonstration of basic templating however users of this model are free to implement their own templates and template logic to suit their needs.</p>
+<p>Given that some uses of presented address information are common, such as for envelopes, this templating annex gives a demonstration of some templating that is expected to be widely useful however users of this model are free to implement their own templates and template logic to suit their own needs.</p>
 </div>
 <div class="sect2">
 <h3 id="_generating_names"><a class="anchor" href="#_generating_names"></a>Generating names</h3>
@@ -3027,13 +3027,14 @@ Hyperlinks to these vocabularies will be provided as soon as persistent identifi
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>Unit 4B, 72 Yundah Street
+<pre>The Manse
+Unit 4B, 72 Yundah Street
 Shorncliffe, Queensland
 4017 Australia</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>The "print out" format is as above where the Address parts, as per Queensland&#8217;s implementation are:</p>
+<p>The "print-out" format is as above where the Address parts, as per Queensland&#8217;s implementation are:</p>
 </div>
 <table class="tableblock frame-all grid-all stripes-even" style="width: 50%;">
 <colgroup>
@@ -3047,6 +3048,10 @@ Shorncliffe, Queensland
 </tr>
 </thead>
 <tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BuildingName</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"The Manse"</p></td>
+</tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Unit</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">"4"</p></td>
@@ -3082,6 +3087,9 @@ Shorncliffe, Queensland
 </tbody>
 </table>
 <div class="paragraph">
+<p>A building name may be a literal value or a reference to an object, if a registered Geographical Object Name.</p>
+</div>
+<div class="paragraph">
 <p>Using Feature Naming recursive logic - generating names for the Road, Locality, State &amp; Country objects elsewhere, the address model sees the following:</p>
 </div>
 <table class="tableblock frame-all grid-all stripes-even" style="width: 50%;">
@@ -3097,8 +3105,12 @@ Shorncliffe, Queensland
 </thead>
 <tbody>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BuildingName</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"The Manse"</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Unit</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"4B"</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"4"</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Unit Suffix</p></td>
@@ -3131,11 +3143,12 @@ Shorncliffe, Queensland
 </tbody>
 </table>
 <div class="paragraph">
-<p>Thus, an informal template for the example address, given these values could be:</p>
+<p>Thus, an informal template for this example address, given these values could be:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>Unit {Unit}{UnitSuffix}
+<pre>{BuindingName}
+Unit {Unit}{UnitSuffix}
 {StreetNumber} {Street}
 {Locality}, {StateOrTerritory}
 {Postcode} {Country}</pre>
@@ -3284,7 +3297,7 @@ Shorncliffe, Queensland
 <p>This Short Form Template is an example of an alternative template to the Basic Template above.</p>
 </div>
 <div class="paragraph">
-<p>This template uses most of the same layout logic as the Basic Template, but it replaces some <code>NEWLINE</code> instnaces with <code>space</code> and doesn&#8217;t render <code>property_name</code>. It also makes the following contractions:</p>
+<p>This template uses most of the same layout logic as the Basic Template, but it replaces some <code>NEWLINE</code> instances with <code>space</code> and doesn&#8217;t render <code>property_name</code>. It also makes the following contractions:</p>
 </div>
 <div class="paragraph">
 <p>Levels &amp; Units:</p>
@@ -3507,7 +3520,7 @@ Shorncliffe, QLD
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-03-16 07:01:27 UTC
+Last updated 2026-03-16 07:11:20 UTC
 </div>
 </div>
 </body>

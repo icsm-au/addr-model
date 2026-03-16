@@ -537,7 +537,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Modified</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2026-03-02</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2026-03-16</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Issued</strong></p></td>
@@ -3049,7 +3049,11 @@ Shorncliffe, Queensland
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Unit</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"4B"</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"4"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unit Suffix</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"B"</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">StreetNumber</p></td>
@@ -3097,6 +3101,10 @@ Shorncliffe, Queensland
 <td class="tableblock halign-left valign-top"><p class="tableblock">"4B"</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unit Suffix</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"B"</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">StreetNumber</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">"72"</p></td>
 </tr>
@@ -3127,7 +3135,7 @@ Shorncliffe, Queensland
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>Unit {Unit}
+<pre>Unit {Unit}{UnitSuffix}
 {StreetNumber} {Street}
 {Locality}, {StateOrTerritory}
 {Postcode} {Country}</pre>
@@ -3258,7 +3266,7 @@ address = geographical_object_name NEWLINE
 </tbody>
 </table>
 <div class="paragraph">
-<p>The template would result in this the same "print out" value as per the example in the section above:</p>
+<p>The template would result in this the same "print-out" value as per the example in the section above:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -3276,7 +3284,10 @@ Shorncliffe, Queensland
 <p>This Short Form Template is an example of an alternative template to the Basic Template above.</p>
 </div>
 <div class="paragraph">
-<p>This template uses most of the same layout logic as the Basic Template but it replaces <code>NEWLINE</code> between <code>building_name</code> &amp; <code>property_name</code> with <code>space</code> and makes the following contractions:</p>
+<p>This template uses most of the same layout logic as the Basic Template, but it replaces some <code>NEWLINE</code> instnaces with <code>space</code> and doesn&#8217;t render <code>property_name</code>. It also makes the following contractions:</p>
+</div>
+<div class="paragraph">
+<p>Levels &amp; Units:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -3289,7 +3300,7 @@ Shorncliffe, Queensland
 </ul>
 </div>
 <div class="paragraph">
-<p>It contracts States &amp; Territories as follows:</p>
+<p>States &amp; Territories:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -3320,7 +3331,7 @@ Shorncliffe, Queensland
 </ul>
 </div>
 <div class="paragraph">
-<p>It contracts Countries as follows:</p>
+<p>Countries:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -3340,8 +3351,7 @@ Shorncliffe, Queensland
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>The Manse
-4B/72 Yundah St
+<pre>4B/72 Yundah St
 Shorncliffe, QLD
 4017 Aust.</pre>
 </div>
@@ -3497,7 +3507,7 @@ Shorncliffe, QLD
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-03-02 03:46:49 UTC
+Last updated 2026-03-16 07:01:27 UTC
 </div>
 </div>
 </body>

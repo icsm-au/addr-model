@@ -1,6 +1,6 @@
 image::icsm-logo.png[]
 
-= ICSM Address Model
+== ICSM Address Model
 
 This repository contains the source files for the https://www.icsm.gov.au[ICSM] Address Model for Australian & New Zealand.
 
@@ -8,13 +8,13 @@ To view the model, go to its permanent online location:
 
 * *https://linked.data.gov.au/def/addr*
 
-== Status
+=== Status
 
-This model was developed by Spatial Information Queensland in response to the ICSM's Addressing 2035 Strategy and was voted in as the ICSM Address Model for all jurisdictions and data exchange by the ICSM Addressing Working Group in June, 2024.
+This model was developed by Spatial Information Queensland in response to the ICSM's Addressing 2035 Strategy and was voted in as the ICSM Address Model for all jurisdictions and data exchange by the ICSM Addressing Working Group in June 2024.
 
-== Model technical details
+=== Model technical details
 
-=== Documentation
+==== Documentation
 
 The model documentation, online at the above location, is created using https://asciidoc.org/[ASCIIDOC], the documentation system also used by many ISO and OGC standards.
 
@@ -26,13 +26,13 @@ This repository is directly accessible at:
 
 To contribute to this model, see the link:https://github.com/icsm-au/addr-model/blob/main/Contributing.adoc[notes on contributing] which describes both technical aspects of editing and community processes.
 
-=== Machine-readable schema
+==== Machine-readable schema
 
 The schema of this model in machine-readable form is presented as an https://www.w3.org/RDF/[RDF] / https://www.w3.org/OWL/[OWL] model in the file `model.ttl` in this repository which is online at https://linked.data.gov.au/def/addr.ttl and at https://linked.data.gov.au/def/addr via https://developer.mozilla.org/en-US/docs/Web/HTTP/Content_negotiation[Content Negotiation] for Turtle data.
 
 Additionally, there is a https://www.w3.org/TR/shacl/[SHACL] validator for this model available online at https://linked.data.gov.au/def/addr/validator.
 
-== Rights and License
+=== Rights and License
 
 The content of this repository and the Address Model overall have the following copyright notices:
 
@@ -43,7 +43,7 @@ All content here is available for reuse under the https://creativecommons.org/li
 
 Note that much of the content in this model is reused from other models that have their own copyright and reuse information but all implement permissive open source Apache or BSD or W3C licenses that are similar to Creative Commons licenses.
 
-== Contributing
+=== Contributing
 
 ICSM welcomes contributions to this open source standard. Anybody may contribute and ICSM will apply serious consideration to all proposals.
 
@@ -60,7 +60,7 @@ If you are able to propose a specific issue fix or improvement, please consider 
 
 If you are not able to lodge an Issue or raise a Pull Request, please describe your suggested issue/changes in an email to the model owner as listed in the Contacts section below. You can also raise issues within the Addressing Working Group.
 
-== Contacts
+=== Contacts
 
 For more information about this model, contact:
 

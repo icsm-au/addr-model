@@ -25,11 +25,12 @@ jobs:
         echo "Add README to docs/"
         asciidoctor README.adoc -o docs/index.html
         echo "Add model to docs/"
-        asciidoctor 00-master.adoc -o docs/model.html
+        asciidoctor spec/00-master.adoc -o docs/model.html
         echo "Add RDF files to docs/"
         cp *.ttl docs/             
         echo "Add images to docs/"
-        cp -r img docs/
+        cp -r spec/img docs/
+        cp icsm-logo.png docs/
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:

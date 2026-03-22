@@ -1,3 +1,5 @@
+image::icsm-logo.png[]
+
 = ICSM Address Model
 
 This repository contains the source files for the https://www.icsm.gov.au[ICSM] Address Model for Australian & New Zealand.

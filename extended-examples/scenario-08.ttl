@@ -8,13 +8,12 @@
 #  ii. Water name: Double Island
 #  iii. Locality name: Ellis Beach
 
-PREFIX a: <https://linked.data.gov.au/dataset/gnaf/address/>
+PREFIX apt: <https://linked.data.gov.au/def/addr-part-types/>
 PREFIX addr: <https://linked.data.gov.au/def/addr/>
 PREFIX cad: <https://linked.data.gov.au/def/cad/>
-PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX geo: <http://www.opengis.net/ont/geosparql#>
-PREFIX geocodeType: <https://linked.data.gov.au/dataset/gnaf/code/geocodeType/>
-PREFIX actiso: <http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressComponentType/>
+PREFIX geoct: <https://linked.data.gov.au/def/geocode-types/>
+
 
 
 # A Single Property - Addressable Object - declared for the whole Conservation Park
@@ -30,29 +29,25 @@ PREFIX actiso: <http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressCom
 <http://example.com/double>
     a addr:Address ;
     addr:isAddressFor <http://example.com/parcel/23456789> ;
-    addr:hasAddressComponent
+    schema:hasPart
         [
-            dcterms:type actiso:propertyName ;
-            addr:hasValueText "Double Island" ;
-            addr:hasValue "Double Island"
+            schema:additionalType actiso:propertyName ;
+            schema:value "Double Island"
         ] ,
         [
-            dcterms:type actiso:locality ;
-            addr:hasValueText "Ellis Beach" ;
-            addr:hasValue <https://linked.data.gov.au/dataset/gnaf/locality/loc9e0bb59f8df8>
+            schema:additionalType actiso:locality ;
+            schema:value <https://linked.data.gov.au/dataset/gnaf/locality/loc9e0bb59f8df8> ;  # "Ellis Beach"
         ] ,
         [
-            dcterms:type actiso:administrativeArea ;
-            addr:hasValueText "Queensland" ;
-            addr:hasValue <https://linked.data.gov.au/dataset/asgsed3/STE/3>
+            schema:additionalType actiso:administrativeArea ;        
+            addr:hasValue <https://linked.data.gov.au/dataset/asgsed3/STE/3> ;  # "Queensland"
         ] ,
         [
-            dcterms:type actiso:postcode ;
-            addr:hasValueText "4879" ;
-            addr:hasValue 4879
+            schema:additionalType actiso:postcode ;
+            schema:value "4879" ;
         ] ;
     addr:hasGeocode [
-            dcterms:type geocodeType:PC ;  # Property Centroid
+            schema:additionalType gct:property-centroid ;
             geo:asWKT "POINT(145.682844 -16.726290)"^^geo:wktLiteral
         ] ;
 .

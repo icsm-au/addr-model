@@ -1,6 +1,6 @@
 == Vocabularies
 
-This model requires the use of vocabularies to provide values for some predicates. Values from a Geocode role type vocabulary must be used to provide value for a Geocode's <<additionalType>> predicate indicating the role that a Geocode plays, and similarly, values from a lifecycle stages vocabulary must be used to provide values for a Lifecycle Stage's <<additionalType>> predicate, indicating specialised lifecycle stage type. <<additionalType>> is frequently use to provide specialised typing for instances of classes.
+This model requires the use of vocabularies to provide values for some predicates. Values from a Geocode role type vocabulary must be used to provide value for a Geocode's <<additionalType>> predicate indicating the role that a Geocode plays, and similarly, values from a lifecycle stages vocabulary must be used to provide values for a Lifecycle Stage's <<additionalType>> predicate, indicating specialised lifecycle stage type. <<additionalType>> is frequently used to provide specialised typing for instances of classes.
 
 [NOTE]
 See the example for <<Address>> where vocabulary concepts are used for both Geocode's and Lifecycle Stage's <<additionalType>> predicates.
@@ -56,7 +56,7 @@ The original 8 concepts from <<ISO19160-1, ISO19160-1>> are:
 | `aptiso:thoroughfareName` | thoroughfare name | Name of a thoroughfare | Use `apt:road` to refer to a road object
 |===
 
-These concepts have all been modified or completely replaced, except `postcode`. Replacements preference links to other complex objects, rather than simple literal data types, for example ISO19160-1's `countryCode` which indicates a text code value for a country has been replaced with `apt:country` which indicates a country object. The use of object references rather than literal values allows for element labelling variation, such as use of abbreviated forms of a name, e.g. "USA" instead of "United Stated of America" , or different language variants, e.g. "Deutschland" instead of "Germany", where the variant information is stored as part of the object referred to.
+These concepts have all been modified or completely replaced, except `postcode`. Replacements preference links to other complex objects, rather than simple literal data types, for example ISO19160-1's `countryCode` which indicates a text code value for a country has been replaced with `apt:country` which indicates a country object. The use of object references rather than literal values allows for element labelling variation, such as use of abbreviated forms of a name, e.g. "USA" instead of "United States of America" , or different language variants, e.g. "Deutschland" instead of "Germany", where the variant information is stored as part of the object referred to.
 
 This vocab currently (June 2024) contains terms such as the following (not the complete vocabulary):
 
@@ -77,11 +77,11 @@ This vocab currently (June 2024) contains terms such as the following (not the c
 
 ==== Address Lifecycle Stage Types
 
-This vocabulary is currently as per <<ISO19160-1>>'s `AddressLifecycleStage` vocabulary, however it is expected that this vocabulary will be extended early in its use in Australia/NZ as it is know that jurisdictions within ANZ use other statuses
+This vocabulary is currently as per <<ISO19160-1>>'s `AddressLifecycleStage` vocabulary, however it is expected that this vocabulary will be extended early in its use in Australia/NZ as it is known that jurisdictions within ANZ use other statuses
 
 The Persistent web identifier for this vocabulary is:
 
-* *https://linked.data.gov.au/def/addr-lifeycle-stage-types*
+* *https://linked.data.gov.au/def/addr-lifecycle-stage-types*
 
 [cols="1,1,2"]
 |===

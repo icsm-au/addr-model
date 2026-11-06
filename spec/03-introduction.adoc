@@ -14,7 +14,7 @@ Addresses modelled according to this model do more than just name things though:
 
 Overall, this model represents addresses, certain properties for them, including address parts, geocodes and the objects to which addresses are assigned in a conceptual manner similar to the international addressing standard, <<ISO19160-1>>. However, this model is expressed in Semantic Webfootnote:[See https://en.wikipedia.org/wiki/Semantic_Web for a general description of the Semantic Web] form, rather than ISO19160-1's UML and XML, and many aspects of the conceptual range that ISO19160 covers this model does not directly cover but instead delegates to other models which it imports, such as the representation of address and address part lifecycle information. This is done so that common things that this model does are available for use elsewhere via a series of mini-models that others may use without importing this whole model.
 
-Additionally, this model relies on several specialised sub-models to handle specific types of address parts, such as streets and geographical object naming. By doing this, those things many be modelled independently of addressing and streets and geographic object names datasets can be used with address data very easily.
+Additionally, this model relies on several specialised sub-models to handle specific types of address parts, such as streets and geographical object naming. By doing this, those things may be modelled independently of addressing and streets and geographic object names datasets can be used with address data very easily.
 
 This model makes no attempt to model the things to which addresses are assigned. In the example above, the address "72 Yundah St...." is mentioned as being a form of name for, or assigned to, a cadastral parcel or a 'lot'. This model doesn't know what those things are and leaves their modelling to other systems. This means that using this model alone, you cannot know what an address is for unless you implement an address part to describe the type of object the address is assigned to. This decision has been made since there could be great complexity in spatial object / infrastructure modelling that isn't really core to addressing, so that's best left to other, likely sophisticated, models.
 
@@ -69,7 +69,7 @@ Some aspects of addressing that were originally modelled within this model at it
 
 Some elements of addresses must be subclassified by, or in some other way associated with, terms from vocabularies. The most prominent example is the expression of the type of part of an address: is it a _street number_, a _flat type_ or a _postcode_?
 
-Where such vocabularies are used, they are not directly published _within_ this model but externally and this model is expected to be used with them. In this way, vocabularies may be extended without extending this model and different users may implement their own vocabularies to suite their business needs, for example, perhaps not all model users allow all address part types Queensland does, such as _water feature number_ so, they should use this model with a vocabulary that excludes that term.
+Where such vocabularies are used, they are not directly published _within_ this model but externally and this model is expected to be used with them. In this way, vocabularies may be extended without extending this model and different users may implement their own vocabularies to suit their business needs, for example, perhaps not all model users allow all address part types Queensland does, such as _water feature number_ so, they should use this model with a vocabulary that excludes that term.
 
 See the <<Vocabularies>> section for more information.
 
@@ -184,7 +184,7 @@ AddressX isAliasOf AddressY
 Or, the inverse:
 
 ----
-AddrezzY hasAlias AddressX
+AddressY hasAlias AddressX
 ----
 
 This indicates that `AddressX` and `AddressY` are for the same Addressable Object. Other models may also indicate that, of the two addresses, one is preferred or in some way more authoritative, perhaps like this:
@@ -353,9 +353,9 @@ This document is this model's "Specification" which is its authoritative, human-
 | https://linked.data.gov.au/def/addr.ttl[Ontology] | _Schema_ | The technical, machine-readable, version of this model
 | <<Vocabularies>> | _Vocabulary_ | The codelist vocabularies developed for this model and links to others defined elsewhere but expected to be used by this model
 | <<AnnexA>> | _Guidance_ | The Requirements formally addressed by this model
-| <<AnnexB>> & https://github.com/Spatial-Information-QLD/address-model/blob/main/shacl/shapes.ttl[Validator] | _Validation_ | The machine-readable validator file used to validate data claiming conformance to this model
+| <<AnnexB>> & https://github.com/icsm-au/addr-model/blob/main/shacl/addr.ttl[Validator] | _Validation_ | The machine-readable validator file used to validate data claiming conformance to this model
 | <<AnnexC>> | _Guidance_ | Suggestions and examples of templating for address presentation
 | <<AnnexD>>
 &
-https://github.com/Spatial-Information-QLD/address-model/tree/main/extended-examples[Extended example data files] | _Example_ | Examples of data conforming, and some not conforming, to this model
+https://github.com/icsm-au/addr-model/tree/main/extended-examples[Extended example data files] | _Example_ | Examples of data conforming, and some not conforming, to this model
 |===

@@ -60,6 +60,29 @@ If you are able to propose a specific issue fix or improvement, please consider 
 
 If you are not able to lodge an Issue or raise a Pull Request, please describe your suggested issue/changes in an email to the model owner as listed in the Contacts section below. You can also raise issues within the Addressing Working Group.
 
+=== Releasing a version
+
+. Use the latest version number in `spec/01-metadata.adoc` for the release and ensure that `owl:versionIRI` and `schema:version` in `model.ttl` match it.
+. Update the specification, RDF model, validators and release notes, including these release instructions, before committing.
+. Reformat changed Turtle files with `kurra file reformat`, build both AsciiDoc documents without warnings, and run `git diff --check`.
+. Commit all release changes on `main`, then create an annotated Git tag using the version number exactly as written in the metadata (for example, `1.1.5`).
+. Push `main` and the version tag to GitHub. Wait for the Auto-build HTML workflow to succeed and confirm that the deployment includes the RDF files under `shacl/`.
+. Create a GitHub release from the pushed tag, use the same version number as its title, and describe the changes in the release notes.
+
+For example, after validation, with Git and the GitHub CLI authenticated:
+
+[source,shell]
+----
+version=1.1.5
+git add --all
+git commit -m "Release ${version}"
+git tag -a "${version}" -m "Release ${version}"
+git push --atomic origin main "refs/tags/${version}"
+gh run list --workflow build.yml --branch main
+gh run watch <run-id> --exit-status
+gh release create "${version}" --verify-tag --title "${version}" --notes-file /path/to/release-notes.txt
+----
+
 === Contacts
 
 For more information about this model, contact:

@@ -1,52 +1,47 @@
 # Oxford Place - invalid example
 # This file contains the first of the two Oxford Place examples from the file oxford-place.ttl
 # but with the geometry representation value of the Geocode (geo:asWKT value) and the link to the Addressable Object
-# (addr:isAddressFor) thus this file is invalid according to shapes.ttl for two reasons.
+# (addr:isAddressFor) thus this file is invalid according to shacl/addr.ttl for two reasons.
 
 PREFIX a: <https://linked.data.gov.au/dataset/gnaf/address/>
-PREFIX as:  <https://linked.data.gov.au/dataset/gnaf/addressSite/>
-PREFIX addr: <https://linked.data.gov.au/def/addr/>
-PREFIX cad: <https://linked.data.gov.au/def/cad/>
-PREFIX dcterms: <http://purl.org/dc/terms/>
-PREFIX geo: <http://www.opengis.net/ont/geosparql#>
 PREFIX actiso: <http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressComponentType/>
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX addr: <https://linked.data.gov.au/def/addr/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX schema: <https://schema.org/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 <http://example.com/oxford>
     a addr:Address ;
     addr:hasAddressComponent
         [
-            dcterms:type actiso:numberFirst ;
-            addr:hasValueText "20" ;
-            addr:hasValue 20
+            dcterms:type actiso:streetLocality ;
+            addr:hasValue <https://linked.data.gov.au/dataset/gnaf/streetLocality/QLD140492> ;
+            addr:hasValueText "Oxford Place" ;
         ] ,
         [
-            dcterms:type actiso:streetLocality ;
-            addr:hasValueText "Oxford Place" ;
-            addr:hasValue <https://linked.data.gov.au/dataset/gnaf/streetLocality/QLD140492>
+            dcterms:type actiso:numberFirst ;
+            addr:hasValue 20 ;
+            addr:hasValueText "20" ;
         ] ,
         [
             dcterms:type actiso:locality ;
+            addr:hasValue <https://linked.data.gov.au/dataset/gnaf/locality/loc38f189794e03> ;
             addr:hasValueText "Shorncliffe" ;
-            addr:hasValue <https://linked.data.gov.au/dataset/gnaf/locality/loc38f189794e03>
         ] ,
         [
             dcterms:type actiso:administrativeArea ;
+            addr:hasValue <https://linked.data.gov.au/dataset/asgsed3/STE/3> ;
             addr:hasValueText "Queensland" ;
-            addr:hasValue <https://linked.data.gov.au/dataset/asgsed3/STE/3>
         ] ,
         [
             dcterms:type actiso:postcode ;
+            addr:hasValue 4017 ;
             addr:hasValueText "4017" ;
-            addr:hasValue 4017
         ] ;
-    addr:hasGeocode [
-            dcterms:type <https://linked.data.gov.au/dataset/gnaf/code/geocodeType/PC> ;  # Property Centroid
-            # geo:asWKT "POINT(153.08468369 -27.32703398)"^^geo:wktLiteral
+    addr:hasGeocode
+        [
+            dcterms:type <https://linked.data.gov.au/dataset/gnaf/code/geocodeType/PC> ;
         ] ;
-    # addr:isAddressFor as:161162441 ;
     addr:isAliasOf
         [
             dcterms:type <https://linked.data.gov.au/dataset/gnaf/code/addressAliasType/SYN> ;

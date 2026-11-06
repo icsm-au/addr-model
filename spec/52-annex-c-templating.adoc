@@ -55,7 +55,7 @@ Using Feature Naming recursive logic - generating names for the Road, Locality, 
 Thus, an informal template for this example address, given these values could be:
 
 ----
-{BuindingName}
+{BuildingName}
 Unit {Unit}{UnitSuffix}
 {StreetNumber} {Street}
 {Locality}, {StateOrTerritory}
@@ -174,7 +174,7 @@ Countries:
 * "Australia" -> "Aust."
 * "New Zealand" -> "NZ"
 
-This template will also see out short form templates implemented for referenced objects, such as Roads so for the example above, using the Roads Model's short form templatefootnote:[https://linked.data.gov.au/def/roads#_short_form_template], the street name "Yundah Street" will be contracted to "Yundah St".
+This template will also seek out short form templates implemented for referenced objects, such as Roads so for the example above, using the Roads Model's short form templatefootnote:[https://linked.data.gov.au/def/roads#_short_form_template], the street name "Yundah Street" will be contracted to "Yundah St".
 
 Given these changes, the example above would print out like this:
 

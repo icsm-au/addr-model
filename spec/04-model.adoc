@@ -2,7 +2,7 @@
 
 This model is composed of Web Ontology Language (OWL) <<OWL>> Classes and Properties. While some of the properties are restricted in their use to various classes, the Classes and Properties are actually defined individually and both are "first class model citizens", with global identity, that can be used in isolation and together. This is in contrast to Unified Modelling Language (UML) _Class Diagrams_ which treat most Properties as element of particular Classes.
 
-This model defines only three Classes and no Properties but reuses many Classes and Properties from other models. For all Classes and Properties, given are: basic details; a reference to that Class or Properties' definition via `rdfs:isDefinedBy`; and a scope note about using it in this model.
+This model defines only three Classes and one Property but reuses many Classes and Properties from other models. For all Classes and Properties, given are: basic details; a reference to that Class or Properties' definition via `rdfs:isDefinedBy`; and a scope note about using it in this model.
 
 Example data is given within the definition of the three Classes this model defines and all Properties used are present within them.
 
@@ -36,12 +36,12 @@ image::img/upper-classes.png[]
 | Is Defined By | This model
 | Subclass Of | <<CompoundName>>
 | Provenance | Derived from <<ISO19160-1>>'s `Address class`
-| Expected Properties | <<isNameFor>>, <<hasPart>>, <<hasGeocode>>, <<hasLifecycleStage>>,
+| Expected Properties | <<isNameFor>>, <<hasPart>>, <<hasGeocode>>, <<hasLifecycleStage>>
 | Example 
 a| [source,turtle]
 ----
 PREFIX addr: <https://linked.data.gov.au/def/addr/>
-PREFIX apt: <http://linked.data.gov.au/def/address-part-types/>
+PREFIX apt: <https://linked.data.gov.au/def/address-part-types/>
 PREFIX cn: <https://linked.data.gov.au/def/cn/>
 PREFIX ex: <http://example.com/>
 PREFIX ex-geom: <http://example.com/geometry/>
@@ -78,10 +78,9 @@ PREFIX schema: <https://schema.org/>
         schema:value <https://linked.data.gov.au/dataset/asgsed3/AUS/AUS> ; # "Australia"
     ] ;
     addr:hasGeocode [
-        schema:roleName <https://linked.data.gov.au/def/geocode-types/property-centroid> ;
-        schema:value [
-            geo:asWKT "POINT(153.0846 -27.3270)"^^geo:wktLiteral ;
-        ] ;
+        a addr:Geocode ;
+        schema:additionalType <https://linked.data.gov.au/def/geocode-types/property-centroid> ;
+        geo:asWKT "POINT(153.0846 -27.3270)"^^geo:wktLiteral ;
     ] ;
     cn:isNameFor ex-parcel:161162441 ;
     ls:hasLifecycleStage [
@@ -151,14 +150,20 @@ ex:cadastral-parcel-x
 | Example
 a| [source,turtle]
 ----
+PREFIX addr: <https://linked.data.gov.au/def/addr/>
+PREFIX ex: <http://example.com/>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX schema: <https://schema.org/>
+
 # An Address with a Geocode and a role
 ex:addr-1
-  a addr:Address ;
-  addr:hasGeocode [
-    schema:additionalType addr:buildingAccessPoint ;
-    geo:asWKT "POINT (152.01 -35.03)"^^geo:wktLiteral ;  # specialised form of hasSerialization
-  ] ;
-  ...
+    a addr:Address ;
+    addr:hasGeocode [
+        a addr:Geocode ;
+        schema:additionalType <https://linked.data.gov.au/def/geocode-types/building-access-point> ;
+        geo:asWKT "POINT (152.01 -35.03)"^^geo:wktLiteral ;  # specialised form of hasSerialization
+    ] ;
+.
 ----
 |===
 

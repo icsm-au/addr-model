@@ -7,7 +7,8 @@
 
 :sectnums!:
 
-==== _A Semantic Web data model used for address information_
+[discrete]
+== _A Semantic Web data model used for address information_
 
 [[fig-overview1]]
 .An informal model overview diagram showing the major elements of this model
@@ -28,7 +29,7 @@ include::05-vocabularies.adoc[]
 
 :sectnums!:
 
-include::50-annex-a-requirments.adoc[]
+include::50-annex-a-requirements.adoc[]
 
 include::51-annex-b-validation.adoc[]
 

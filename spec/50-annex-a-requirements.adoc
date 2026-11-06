@@ -59,7 +59,7 @@ This Model uses the modelling https://en.wikipedia.org/wiki/Open-world_assumptio
 
 This Model inherits from the Lifecycles Model <<LM>> and allows lifecycles to be applied to any model class such as Address, Addressable Object, Address Component.
 
-The stages of the Lifecycle Model are defined by vocabularies thus any implementer may extend or constrain available stages to suite their purpose.
+The stages of the Lifecycle Model are defined by vocabularies thus any implementer may extend or constrain available stages to suit their purpose.
 
 [[req-8]]
 === A.8 Address validation at creation point

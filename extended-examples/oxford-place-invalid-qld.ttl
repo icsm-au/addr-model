@@ -1,17 +1,13 @@
 # Oxford Place - invalid QLQ example
-# This file is invalid according to shapes.ttl as the file oxford-place-invalid.ttl is however it is additionally
+# This file is invalid according to shacl/addr.ttl as the file oxford-place-invalid.ttl is however it is additionally
 # invalid according to the file oxford-place-invalid-qld.ttl with its additional requirement of at least two Address
 # Components since this file contains only 1 Address Component for the Address <http://example.com/oxford>.
 
 PREFIX a: <https://linked.data.gov.au/dataset/gnaf/address/>
-PREFIX as:  <https://linked.data.gov.au/dataset/gnaf/addressSite/>
-PREFIX addr: <https://linked.data.gov.au/def/addr/>
-PREFIX cad: <https://linked.data.gov.au/def/cad/>
-PREFIX dcterms: <http://purl.org/dc/terms/>
-PREFIX geo: <http://www.opengis.net/ont/geosparql#>
 PREFIX actiso: <http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressComponentType/>
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX addr: <https://linked.data.gov.au/def/addr/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX schema: <https://schema.org/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 <http://example.com/oxford>
@@ -19,14 +15,13 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     addr:hasAddressComponent
         [
             dcterms:type actiso:numberFirst ;
+            addr:hasValue 20 ;
             addr:hasValueText "20" ;
-            addr:hasValue 20
         ] ;
-    addr:hasGeocode [
-            dcterms:type <https://linked.data.gov.au/dataset/gnaf/code/geocodeType/PC> ;  # Property Centroid
-            # geo:asWKT "POINT(153.08468369 -27.32703398)"^^geo:wktLiteral
+    addr:hasGeocode
+        [
+            dcterms:type <https://linked.data.gov.au/dataset/gnaf/code/geocodeType/PC> ;
         ] ;
-    # addr:isAddressFor as:161162441 ;
     addr:isAliasOf
         [
             dcterms:type <https://linked.data.gov.au/dataset/gnaf/code/addressAliasType/SYN> ;

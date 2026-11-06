@@ -439,8 +439,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h1>ICSM ANZ Address Model</h1>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
-<ul class="sectlevel3">
-<li><a href="#_a_semantic_web_data_model_used_for_address_information"><em>A Semantic Web data model used for address information</em></a></li>
+<ul class="sectlevel1">
 <li><a href="#_metadata">1. Metadata</a></li>
 <li><a href="#_preamble">2. Preamble</a>
 <ul class="sectlevel2">
@@ -502,13 +501,15 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div id="content">
-<div class="sect3">
-<h4 id="_a_semantic_web_data_model_used_for_address_information"><a class="anchor" href="#_a_semantic_web_data_model_used_for_address_information"></a><em>A Semantic Web data model used for address information</em></h4>
+<div id="preamble">
+<div class="sectionbody">
+<h2 id="_a_semantic_web_data_model_used_for_address_information" class="discrete"><em>A Semantic Web data model used for address information</em></h2>
 <div id="fig-overview1" class="imageblock">
 <div class="content">
 <img src="img/Overview.svg" alt="Overview">
 </div>
 <div class="title">Figure 1. An informal model overview diagram showing the major elements of this model</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -538,7 +539,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Modified</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2026-03-16</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2026-11-06</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Issued</strong></p></td>
@@ -556,18 +557,19 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Provenance</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">This model is <a href="https://www.anzlic.gov.au">ANZLIC</a>'s <a href="https://icsm.gov.au">Intergovernmental Committee on Surveying &amp; Mapping (ICSM)</a>'s model for addressing information in Australian &amp; New Zealand.</p>
 <p class="tableblock">It was originally developed between 2021 and 2023 for Queensland Spatial Information, a unit of the then Queensland Department of Resources, to assist with their future address database design, and presented to ICSM for national adoption in early 2024.</p>
-<p class="tableblock">In 2025 and early 2026, small updates where made to ensure better alignment with and reuse of the Compound Name and Lifecycle models.</p>
+<p class="tableblock">In 2025 and early 2026, small updates were made to ensure better alignment with and reuse of the Compound Name and Lifecycle models.</p>
 <p class="tableblock">It is informed by the ICSM&#8217;s Addressing 2035: Addressing Reform and Innovation for Australia and New Zealand, published in late 2021, which listed 'pain points' with current ANZ address models and considered future address modelling needs. This model tries to address the 10 main Requirements established by the Strategy.</p>
 <p class="tableblock">This model is also informed by both the relational database model used for the <a href="https://data.gov.au/data/dataset/geocoded-national-address-file-g-naf">G-NAF</a>, Australia&#8217;s Geocoded National Address File, and work by <a href="https://www.csiro.au">CSIRO</a> in 2018 to characterise the G-NAF in Semantic Web form, the ontology for which is online at <a href="https://linked.data.gov.au/def/gnaf" class="bare">https://linked.data.gov.au/def/gnaf</a>, as well as the <a href="https://www.iso.org">ISO</a>'s <a href="https://www.iso.org/standard/61710.html">ISO19160-1 Addressing Part 1: Conceptual model</a>.</p>
 <p class="tableblock">In 2023, several parts of this model covering general modelling and spatial modelling issues, such as lifecycle representation, spatiality itself &amp; compound naming, were extracted out into a series of mini-models that are also used by other candidate ICSM models for Place (Geographic) Names, Roads and Administrative Areas. Also, alignment to the ICSM&#8217;s national <a href="https://linked.data.gov.au/def/csdm">Cadastral Survey Data Model (CSDM)</a> was made and, as a result, this model is both much reduced in complexity, and re-uses fundamental background models used by other, related models and aligned with the only other ICSM national Semantic Web model.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Status</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">First stable version</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Stable version</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Version</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>1.1.1</strong>: 2026-03 Fix class examples &amp; update validator<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>1.1.5</strong>: 2026-11: Aligned model RDF with Spec and ensured all 4 validators are ValPub compliant<br>
+<strong>1.1.1</strong>: 2026-03 Fix class examples &amp; update validator<br>
 <strong>1.1.0</strong>: 2026-01 Better Compound Naming and Lifecycle model reuse<br>
 <strong>1.0.4</strong>: 2025-02 Minor corrections<br>
 <strong>1.0.3</strong>: 2025-01 Extended Examples - table added<br>
@@ -616,7 +618,7 @@ This model was adopted by ICSM&#8217;s Address Working Group in June 2024 as the
 <p>A Semantic Web data model of address information that caters specifically for Australian &amp; New Zealand&#8217;s address modelling needs.</p>
 </div>
 <div class="paragraph">
-<p>This model was originally developed between 2021 and 2023 for Queensland Spatial Information, a unit of Queensland&#8217;s then Department of Resources, to assist with their future address database design. It is informed by the ICSM&#8217;s Addressing 2035: Addressing Reform and Innovation for Australia and New Zealand, published in late 2021, which listed 'pain points' with current ANZ address models and considered future address modelling needs. This model tries to address the 10 main Requirements established by the Strategy. This model is also informed by both the relational database model used for the G-NAF, Australia&#8217;s Geocoded National Address File, and CSIRO work in 2018 to characterise the GNAF in Semantic Web form, the ontology for which is online at <a href="https://linked.data.gov.au/def/gnaf" class="bare">https://linked.data.gov.au/def/gnaf</a>, as well as the ISO&#8217;s ISO19160-1 Addressing Part 1: Conceptual model. In 2023, several parts of this model covering general modelling issues, such as lifecycle representation, were extracted out into a series of mini-models to allow other models to reuse them without importing this model. As a result, the 2023 version fo this model appears to be greatly reduced in complexity and coverage but coverage is unchanged with those mini-models are also used.</p>
+<p>This model was originally developed between 2021 and 2023 for Queensland Spatial Information, a unit of Queensland&#8217;s then Department of Resources, to assist with their future address database design. It is informed by the ICSM&#8217;s Addressing 2035: Addressing Reform and Innovation for Australia and New Zealand, published in late 2021, which listed 'pain points' with current ANZ address models and considered future address modelling needs. This model tries to address the 10 main Requirements established by the Strategy. This model is also informed by both the relational database model used for the G-NAF, Australia&#8217;s Geocoded National Address File, and CSIRO work in 2018 to characterise the GNAF in Semantic Web form, the ontology for which is online at <a href="https://linked.data.gov.au/def/gnaf" class="bare">https://linked.data.gov.au/def/gnaf</a>, as well as the ISO&#8217;s ISO19160-1 Addressing Part 1: Conceptual model. In 2023, several parts of this model covering general modelling issues, such as lifecycle representation, were extracted out into a series of mini-models to allow other models to reuse them without importing this model. As a result, the 2023 version of this model appears to be greatly reduced in complexity and coverage but coverage is unchanged with those mini-models are also used.</p>
 </div>
 </div>
 <div class="sect2">
@@ -780,7 +782,7 @@ Shorncliffe QLD
 <p>Overall, this model represents addresses, certain properties for them, including address parts, geocodes and the objects to which addresses are assigned in a conceptual manner similar to the international addressing standard, <a href="#ISO19160-1">ISO19160-1</a>. However, this model is expressed in Semantic Web<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup> form, rather than ISO19160-1&#8217;s UML and XML, and many aspects of the conceptual range that ISO19160 covers this model does not directly cover but instead delegates to other models which it imports, such as the representation of address and address part lifecycle information. This is done so that common things that this model does are available for use elsewhere via a series of mini-models that others may use without importing this whole model.</p>
 </div>
 <div class="paragraph">
-<p>Additionally, this model relies on several specialised sub-models to handle specific types of address parts, such as streets and geographical object naming. By doing this, those things many be modelled independently of addressing and streets and geographic object names datasets can be used with address data very easily.</p>
+<p>Additionally, this model relies on several specialised sub-models to handle specific types of address parts, such as streets and geographical object naming. By doing this, those things may be modelled independently of addressing and streets and geographic object names datasets can be used with address data very easily.</p>
 </div>
 <div class="paragraph">
 <p>This model makes no attempt to model the things to which addresses are assigned. In the example above, the address "72 Yundah St&#8230;&#8203;." is mentioned as being a form of name for, or assigned to, a cadastral parcel or a 'lot'. This model doesn&#8217;t know what those things are and leaves their modelling to other systems. This means that using this model alone, you cannot know what an address is for unless you implement an address part to describe the type of object the address is assigned to. This decision has been made since there could be great complexity in spatial object / infrastructure modelling that isn&#8217;t really core to addressing, so that&#8217;s best left to other, likely sophisticated, models.</p>
@@ -889,7 +891,7 @@ Shorncliffe QLD
 <p>Some elements of addresses must be subclassified by, or in some other way associated with, terms from vocabularies. The most prominent example is the expression of the type of part of an address: is it a <em>street number</em>, a <em>flat type</em> or a <em>postcode</em>?</p>
 </div>
 <div class="paragraph">
-<p>Where such vocabularies are used, they are not directly published <em>within</em> this model but externally and this model is expected to be used with them. In this way, vocabularies may be extended without extending this model and different users may implement their own vocabularies to suite their business needs, for example, perhaps not all model users allow all address part types Queensland does, such as <em>water feature number</em> so, they should use this model with a vocabulary that excludes that term.</p>
+<p>Where such vocabularies are used, they are not directly published <em>within</em> this model but externally and this model is expected to be used with them. In this way, vocabularies may be extended without extending this model and different users may implement their own vocabularies to suit their business needs, for example, perhaps not all model users allow all address part types Queensland does, such as <em>water feature number</em> so, they should use this model with a vocabulary that excludes that term.</p>
 </div>
 <div class="paragraph">
 <p>See the <a href="#_vocabularies">Vocabularies</a> section for more information.</p>
@@ -1085,7 +1087,7 @@ For address number generation see the Address Creation and Maintenance Standard:
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>AddrezzY hasAlias AddressX</pre>
+<pre>AddressY hasAlias AddressX</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1309,7 +1311,7 @@ ObjectP
 <td class="tableblock halign-left valign-top"><p class="tableblock">The Requirements formally addressed by this model</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#AnnexB">Annex B: Validation</a> &amp; <a href="https://github.com/Spatial-Information-QLD/address-model/blob/main/shacl/shapes.ttl">Validator</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#AnnexB">Annex B: Validation</a> &amp; <a href="https://github.com/icsm-au/addr-model/blob/main/shacl/addr.ttl">Validator</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>Validation</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The machine-readable validator file used to validate data claiming conformance to this model</p></td>
 </tr>
@@ -1321,7 +1323,7 @@ ObjectP
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#AnnexD">Annex D: Extended Examples</a>
 &amp;
-<a href="https://github.com/Spatial-Information-QLD/address-model/tree/main/extended-examples">Extended example data files</a></p></td>
+<a href="https://github.com/icsm-au/addr-model/tree/main/extended-examples">Extended example data files</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>Example</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Examples of data conforming, and some not conforming, to this model</p></td>
 </tr>
@@ -1337,7 +1339,7 @@ ObjectP
 <p>This model is composed of Web Ontology Language (OWL) <a href="#OWL">OWL</a> Classes and Properties. While some of the properties are restricted in their use to various classes, the Classes and Properties are actually defined individually and both are "first class model citizens", with global identity, that can be used in isolation and together. This is in contrast to Unified Modelling Language (UML) <em>Class Diagrams</em> which treat most Properties as element of particular Classes.</p>
 </div>
 <div class="paragraph">
-<p>This model defines only three Classes and no Properties but reuses many Classes and Properties from other models. For all Classes and Properties, given are: basic details; a reference to that Class or Properties' definition via <code>rdfs:isDefinedBy</code>; and a scope note about using it in this model.</p>
+<p>This model defines only three Classes and one Property but reuses many Classes and Properties from other models. For all Classes and Properties, given are: basic details; a reference to that Class or Properties' definition via <code>rdfs:isDefinedBy</code>; and a scope note about using it in this model.</p>
 </div>
 <div class="paragraph">
 <p>Example data is given within the definition of the three Classes this model defines and all Properties used are present within them.</p>
@@ -1412,14 +1414,14 @@ ObjectP
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Expected Properties</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#isNameFor">is name for</a>, <a href="#hasPart">has part</a>, <a href="#hasGeocode">has geocode</a>, <a href="#hasLifecycleStage">has lifecycle stage</a>,</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#isNameFor">is name for</a>, <a href="#hasPart">has part</a>, <a href="#hasGeocode">has geocode</a>, <a href="#hasLifecycleStage">has lifecycle stage</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-turtle" data-lang="turtle">PREFIX addr: &lt;https://linked.data.gov.au/def/addr/&gt;
-PREFIX apt: &lt;http://linked.data.gov.au/def/address-part-types/&gt;
+PREFIX apt: &lt;https://linked.data.gov.au/def/address-part-types/&gt;
 PREFIX cn: &lt;https://linked.data.gov.au/def/cn/&gt;
 PREFIX ex: &lt;http://example.com/&gt;
 PREFIX ex-geom: &lt;http://example.com/geometry/&gt;
@@ -1456,10 +1458,9 @@ PREFIX schema: &lt;https://schema.org/&gt;
         schema:value &lt;https://linked.data.gov.au/dataset/asgsed3/AUS/AUS&gt; ; # "Australia"
     ] ;
     addr:hasGeocode [
-        schema:roleName &lt;https://linked.data.gov.au/def/geocode-types/property-centroid&gt; ;
-        schema:value [
-            geo:asWKT "POINT(153.0846 -27.3270)"^^geo:wktLiteral ;
-        ] ;
+        a addr:Geocode ;
+        schema:additionalType &lt;https://linked.data.gov.au/def/geocode-types/property-centroid&gt; ;
+        geo:asWKT "POINT(153.0846 -27.3270)"^^geo:wktLiteral ;
     ] ;
     cn:isNameFor ex-parcel:161162441 ;
     ls:hasLifecycleStage [
@@ -1597,14 +1598,20 @@ ex:cadastral-parcel-x
 <td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-turtle" data-lang="turtle"># An Address with a Geocode and a role
+<pre class="highlight"><code class="language-turtle" data-lang="turtle">PREFIX addr: &lt;https://linked.data.gov.au/def/addr/&gt;
+PREFIX ex: &lt;http://example.com/&gt;
+PREFIX geo: &lt;http://www.opengis.net/ont/geosparql#&gt;
+PREFIX schema: &lt;https://schema.org/&gt;
+
+# An Address with a Geocode and a role
 ex:addr-1
-  a addr:Address ;
-  addr:hasGeocode [
-    schema:additionalType addr:buildingAccessPoint ;
-    geo:asWKT "POINT (152.01 -35.03)"^^geo:wktLiteral ;  # specialised form of hasSerialization
-  ] ;
-  ...</code></pre>
+    a addr:Address ;
+    addr:hasGeocode [
+        a addr:Geocode ;
+        schema:additionalType &lt;https://linked.data.gov.au/def/geocode-types/building-access-point&gt; ;
+        geo:asWKT "POINT (152.01 -35.03)"^^geo:wktLiteral ;  # specialised form of hasSerialization
+    ] ;
+.</code></pre>
 </div>
 </div></div></td>
 </tr>
@@ -2357,7 +2364,7 @@ ex:street-name-x
 <h2 id="_vocabularies"><a class="anchor" href="#_vocabularies"></a>5. Vocabularies</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This model requires the use of vocabularies to provide values for some predicates. Values from a Geocode role type vocabulary must be used to provide value for a Geocode&#8217;s <a href="#additionalType">additional type</a> predicate indicating the role that a Geocode plays, and similarly, values from a lifecycle stages vocabulary must be used to provide values for a Lifecycle Stage&#8217;s <a href="#additionalType">additional type</a> predicate, indicating specialised lifecycle stage type. <a href="#additionalType">additional type</a> is frequently use to provide specialised typing for instances of classes.</p>
+<p>This model requires the use of vocabularies to provide values for some predicates. Values from a Geocode role type vocabulary must be used to provide value for a Geocode&#8217;s <a href="#additionalType">additional type</a> predicate indicating the role that a Geocode plays, and similarly, values from a lifecycle stages vocabulary must be used to provide values for a Lifecycle Stage&#8217;s <a href="#additionalType">additional type</a> predicate, indicating specialised lifecycle stage type. <a href="#additionalType">additional type</a> is frequently used to provide specialised typing for instances of classes.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -2534,7 +2541,7 @@ Hyperlinks to these vocabularies will be provided as soon as persistent identifi
 </tbody>
 </table>
 <div class="paragraph">
-<p>These concepts have all been modified or completely replaced, except <code>postcode</code>. Replacements preference links to other complex objects, rather than simple literal data types, for example ISO19160-1&#8217;s <code>countryCode</code> which indicates a text code value for a country has been replaced with <code>apt:country</code> which indicates a country object. The use of object references rather than literal values allows for element labelling variation, such as use of abbreviated forms of a name, e.g. "USA" instead of "United Stated of America" , or different language variants, e.g. "Deutschland" instead of "Germany", where the variant information is stored as part of the object referred to.</p>
+<p>These concepts have all been modified or completely replaced, except <code>postcode</code>. Replacements preference links to other complex objects, rather than simple literal data types, for example ISO19160-1&#8217;s <code>countryCode</code> which indicates a text code value for a country has been replaced with <code>apt:country</code> which indicates a country object. The use of object references rather than literal values allows for element labelling variation, such as use of abbreviated forms of a name, e.g. "USA" instead of "United States of America" , or different language variants, e.g. "Deutschland" instead of "Germany", where the variant information is stored as part of the object referred to.</p>
 </div>
 <div class="paragraph">
 <p>This vocab currently (June 2024) contains terms such as the following (not the complete vocabulary):</p>
@@ -2615,7 +2622,7 @@ Hyperlinks to these vocabularies will be provided as soon as persistent identifi
 <div class="sect3">
 <h4 id="_address_lifecycle_stage_types"><a class="anchor" href="#_address_lifecycle_stage_types"></a>5.2.2. Address Lifecycle Stage Types</h4>
 <div class="paragraph">
-<p>This vocabulary is currently as per <a href="#ISO19160-1">ISO19160-1</a>'s <code>AddressLifecycleStage</code> vocabulary, however it is expected that this vocabulary will be extended early in its use in Australia/NZ as it is know that jurisdictions within ANZ use other statuses</p>
+<p>This vocabulary is currently as per <a href="#ISO19160-1">ISO19160-1</a>'s <code>AddressLifecycleStage</code> vocabulary, however it is expected that this vocabulary will be extended early in its use in Australia/NZ as it is known that jurisdictions within ANZ use other statuses</p>
 </div>
 <div class="paragraph">
 <p>The Persistent web identifier for this vocabulary is:</p>
@@ -2623,7 +2630,7 @@ Hyperlinks to these vocabularies will be provided as soon as persistent identifi
 <div class="ulist">
 <ul>
 <li>
-<p><strong><a href="https://linked.data.gov.au/def/addr-lifeycle-stage-types" class="bare">https://linked.data.gov.au/def/addr-lifeycle-stage-types</a></strong></p>
+<p><strong><a href="https://linked.data.gov.au/def/addr-lifecycle-stage-types" class="bare">https://linked.data.gov.au/def/addr-lifecycle-stage-types</a></strong></p>
 </li>
 </ul>
 </div>
@@ -2889,7 +2896,7 @@ Hyperlinks to these vocabularies will be provided as soon as persistent identifi
 <p>This Model inherits from the Lifecycles Model <a href="#LM">LM</a> and allows lifecycles to be applied to any model class such as Address, Addressable Object, Address Component.</p>
 </div>
 <div class="paragraph">
-<p>The stages of the Lifecycle Model are defined by vocabularies thus any implementer may extend or constrain available stages to suite their purpose.</p>
+<p>The stages of the Lifecycle Model are defined by vocabularies thus any implementer may extend or constrain available stages to suit their purpose.</p>
 </div>
 </div>
 <div class="sect2">
@@ -2927,12 +2934,12 @@ Hyperlinks to these vocabularies will be provided as soon as persistent identifi
 <div class="sect2">
 <h3 id="_b_1_provided_validators"><a class="anchor" href="#_b_1_provided_validators"></a>B.1 Provided Validators</h3>
 <div class="paragraph">
-<p>Two example validators are provided with this model:</p>
+<p>Several validators are provided with this model:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><a href="https://github.com/icsm-au/addr-model/blob/main/shacl/shapes.ttl">shapes.ttl</a> - a canonical validator for this model</p>
+<p><a href="https://github.com/icsm-au/addr-model/blob/main/shacl/addr.ttl">shacl/addr.ttl</a> - a canonical validator for this model</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -2942,7 +2949,13 @@ Hyperlinks to these vocabularies will be provided as soon as persistent identifi
 </div>
 </li>
 <li>
-<p><a href="https://github.com/icsm-au/addr-model/blob/main/shacl/shapes-qld.ttl">shapes-qld.ttl</a> a validator for a jurisdiction - Queensland</p>
+<p><a href="https://github.com/icsm-au/addr-model/blob/main/shacl/addr-qld.ttl">shacl/addr-qld.ttl</a> - Queensland&#8217;s validator</p>
+</li>
+<li>
+<p><a href="https://github.com/icsm-au/addr-model/blob/main/shacl/addr-qld.ttl">shacl/addr-qld.ttl</a> - ACT&#8217;s validator</p>
+</li>
+<li>
+<p><a href="https://github.com/icsm-au/addr-model/blob/main/shacl/addr-qld.ttl">shacl/addr-qld.ttl</a> - NSW&#8217;s validator</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -3000,7 +3013,7 @@ Hyperlinks to these vocabularies will be provided as soon as persistent identifi
 <div class="sect2">
 <h3 id="_b_3_example_validation_data"><a class="anchor" href="#_b_3_example_validation_data"></a>B.3 Example Validation data</h3>
 <div class="paragraph">
-<p>See the example data for <a href="#Address">Address</a> class. A copy of it is also stored in this model&#8217;s version control repository as well as an extended example that contains all the additions needed to be valid accordin to the canonical validator. See</p>
+<p>See the example data for <a href="#Address">Address</a> class. A copy of it is also stored in this model&#8217;s version control repository as well as an extended example that contains all the additions needed to be valid according to the canonical validator. See</p>
 </div>
 <div class="ulist">
 <ul>
@@ -3148,7 +3161,7 @@ Shorncliffe, Queensland
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>{BuindingName}
+<pre>{BuildingName}
 Unit {Unit}{UnitSuffix}
 {StreetNumber} {Street}
 {Locality}, {StateOrTerritory}
@@ -3358,7 +3371,7 @@ Shorncliffe, Queensland
 </ul>
 </div>
 <div class="paragraph">
-<p>This template will also see out short form templates implemented for referenced objects, such as Roads so for the example above, using the Roads Model&#8217;s short form template<sup class="footnote">[<a id="_footnoteref_5" class="footnote" href="#_footnotedef_5" title="View footnote.">5</a>]</sup>, the street name "Yundah Street" will be contracted to "Yundah St".</p>
+<p>This template will also seek out short form templates implemented for referenced objects, such as Roads so for the example above, using the Roads Model&#8217;s short form template<sup class="footnote">[<a id="_footnoteref_5" class="footnote" href="#_footnotedef_5" title="View footnote.">5</a>]</sup>, the street name "Yundah Street" will be contracted to "Yundah St".</p>
 </div>
 <div class="paragraph">
 <p>Given these changes, the example above would print out like this:</p>
@@ -3521,7 +3534,7 @@ Shorncliffe, QLD
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-11-06 07:40:03 UTC
+Last updated 2026-11-06 08:56:58 UTC
 </div>
 </div>
 </body>

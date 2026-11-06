@@ -545,6 +545,46 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect2">
+<h3 id="_releasing_a_version">Releasing a version</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Use the latest version number in <code>spec/01-metadata.adoc</code> for the release and ensure that <code>owl:versionIRI</code> and <code>schema:version</code> in <code>model.ttl</code> match it.</p>
+</li>
+<li>
+<p>Update the specification, RDF model, validators and release notes, including these release instructions, before committing.</p>
+</li>
+<li>
+<p>Reformat changed Turtle files with <code>kurra file reformat</code>, build both AsciiDoc documents without warnings, and run <code>git diff --check</code>.</p>
+</li>
+<li>
+<p>Commit all release changes on <code>main</code>, then create an annotated Git tag using the version number exactly as written in the metadata (for example, <code>1.1.5</code>).</p>
+</li>
+<li>
+<p>Push <code>main</code> and the version tag to GitHub. Wait for the Auto-build HTML workflow to succeed and confirm that the deployment includes the RDF files under <code>shacl/</code>.</p>
+</li>
+<li>
+<p>Create a GitHub release from the pushed tag, use the same version number as its title, and describe the changes in the release notes.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>For example, after validation, with Git and the GitHub CLI authenticated:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-shell" data-lang="shell">version=1.1.5
+git add --all
+git commit -m "Release ${version}"
+git tag -a "${version}" -m "Release ${version}"
+git push --atomic origin main "refs/tags/${version}"
+gh run list --workflow build.yml --branch main
+gh run watch &lt;run-id&gt; --exit-status
+gh release create "${version}" --verify-tag --title "${version}" --notes-file /path/to/release-notes.txt</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
 <h3 id="_contacts">Contacts</h3>
 <div class="paragraph">
 <p>For more information about this model, contact:</p>
@@ -580,7 +620,7 @@ Queensland Government<br>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-11-06 07:40:03 UTC
+Last updated 2026-11-06 08:56:58 UTC
 </div>
 </div>
 </body>

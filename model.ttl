@@ -1,5 +1,5 @@
 PREFIX : <https://linked.data.gov.au/def/addr/>
-PREFIX cn: <http://linked.data.gov.au/def/cn/>
+PREFIX cn: <https://linked.data.gov.au/def/cn/>
 PREFIX geo: <http://www.opengis.net/ont/geosparql#>
 PREFIX ont: <https://linked.data.gov.au/def/addr>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
@@ -8,30 +8,129 @@ PREFIX schema: <https://schema.org/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-:Address
-    a owl:Class ;
-    rdfs:isDefinedBy ont: ;
-    rdfs:subClassOf cn:CompoundName ;
-    skos:historyNote "Derived from ISO19160-1's Address class" ;
-    schema:description "The Address class represents structured information that allows unambiguous identification of an object for the purposes of identification and location" ;
-    schema:name "Address" ;
-.
-
 :AddressableObject
     a owl:Class ;
     rdfs:isDefinedBy ont: ;
     rdfs:subClassOf geo:Feature ;
+    skos:example """PREFIX addr: <https://linked.data.gov.au/def/addr/>
+PREFIX cn: <https://linked.data.gov.au/def/cn/>
+PREFIX ex: <http://example.com/>
+PREFIX schema: <https://schema.org/>
+
+ex:oxford
+    a addr:Address ;
+    cn:isNameFor ex:cadastral-parcel-x ;
+.
+
+ex:cadastral-parcel-x
+    a addr:AddressableObject ;  # might also be a ex:Parcel ;
+.
+
+# inferred
+ex:cadastral-parcel-x
+    cn:hasName ex:oxford ;
+.""" ;
     skos:historyNote "Derived from ISO19160-1's AddressableObject class and its associated codelist of subtypes" ;
+    skos:scopeNote "Judgement as to what makes for a permissible AddressableObject rests with the implementer. This model's technical requirements are only that the object is a legal geo:Feature object, thus implementers may make Addressable Objects of almost anything." ;
     schema:description """An object that is unambiguously identified by an address.
 
 Examples of types of AddressableObjects are a building, a dwelling or a land parcel""" ;
     schema:name "Addressable Object" ;
 .
 
+:hasGeocode
+    a owl:ObjectProperty ;
+    rdfs:domain :Address ;
+    rdfs:isDefinedBy ont: ;
+    rdfs:range :Geocode ;
+    schema:description "Indicates a Geocode for this Address" ;
+    schema:name "has geocode" ;
+.
+
 <https://kurrawong.ai>
     a schema:Organization ;
     schema:name "KurrawongAI" ;
     schema:url "https://kurrawong.ai"^^xsd:anyURI ;
+.
+
+:Address
+    a owl:Class ;
+    rdfs:isDefinedBy ont: ;
+    rdfs:subClassOf cn:CompoundName ;
+    skos:example """PREFIX addr: <https://linked.data.gov.au/def/addr/>
+PREFIX apt: <https://linked.data.gov.au/def/address-part-types/>
+PREFIX cn: <https://linked.data.gov.au/def/cn/>
+PREFIX ex: <http://example.com/>
+PREFIX ex-geom: <http://example.com/geometry/>
+PREFIX ex-parcel: <http://example.com/parcel/>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX ls: <https://linked.data.gov.au/def/lifecycle/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX schema: <https://schema.org/>
+
+<http://example.com/oxford>
+    a addr:Address ;
+    schema:hasPart [
+        schema:additionalType apt:numberFirst ;
+        schema:value 20
+    ] ,
+    [
+        schema:additionalType apt:road ;
+        schema:value <https://linked.data.gov.au/dataset/qldaddr/streetLocality/QLD140492> ; # "Oxford Place"
+    ] ,
+    [
+        schema:additionalType apt:locality ;
+        schema:value <https://linked.data.gov.au/dataset/qldaddr/locality/loc38f189794e03> ;  # "Shorncliffe"
+    ] ,
+    [
+        schema:additionalType apt:stateOrTerritory ;
+        schema:value <https://linked.data.gov.au/dataset/asgsed3/STE/3> ; # "Queensland"
+    ] ,
+    [
+        schema:additionalType apt:postcode ;
+        schema:value 4017
+    ] ,
+    [
+        schema:additionalType apt:country ;
+        schema:value <https://linked.data.gov.au/dataset/asgsed3/AUS/AUS> ; # "Australia"
+    ] ;
+    addr:hasGeocode [
+        a addr:Geocode ;
+        schema:additionalType <https://linked.data.gov.au/def/geocode-types/property-centroid> ;
+        geo:asWKT "POINT(153.0846 -27.3270)"^^geo:wktLiteral ;
+    ] ;
+    cn:isNameFor ex-parcel:161162441 ;
+    ls:hasLifecycleStage [
+        schema:additionalType ex:Unofficial ;
+    ] ;
+.""" ;
+    skos:historyNote "Derived from ISO19160-1's Address class" ;
+    schema:description "The Address class represents structured information that allows unambiguous identification of an object for the purposes of identification and location" ;
+    schema:name "Address" ;
+.
+
+:Geocode
+    a owl:Class ;
+    rdfs:isDefinedBy ont: ;
+    rdfs:subClassOf geo:Geometry ;
+    skos:example """PREFIX addr: <https://linked.data.gov.au/def/addr/>
+PREFIX ex: <http://example.com/>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX schema: <https://schema.org/>
+
+# An Address with a Geocode and a role
+ex:addr-1
+    a addr:Address ;
+    addr:hasGeocode [
+        a addr:Geocode ;
+        schema:additionalType <https://linked.data.gov.au/def/geocode-types/building-access-point> ;
+        geo:asWKT "POINT (152.01 -35.03)"^^geo:wktLiteral ;  # specialised form of hasSerialization
+    ] ;
+.""" ;
+    skos:historyNote "Derived from the G-NAF's expression of Address position"@en ;
+    skos:scopeNote "Indicating a Geocode for an Address is a direct method of positioning the Address on the earth. Addresses may also be located by reference to an Addressable Object which is an indirect method. This model does not indicate any Geocode / Addressable Object geometry relations, although they may exist" ;
+    schema:description "A Geometry that has a persistent Role" ;
+    schema:name "Geocode" ;
 .
 
 <https://linked.data.gov.au/org/qsi>
@@ -55,7 +154,7 @@ Examples of types of AddressableObjects are a building, a dwelling or a land par
 
 ont:
     a owl:Ontology ;
-    owl:versionIRI :1.1.0 ;
+    owl:versionIRI :1.1.5 ;
     skos:historyNote """This model is https://www.anzlic.gov.au[ANZLIC]'s https://icsm.gov.au[Intergovernmental Committee on Surveying & Mapping (ICSM)]'s model for addressing information in Australian & New Zealand.
 
 It was originally developed between 2021 and 2023 for Queensland Spatial Information, a unit of the then Queensland Department of Resources, to assist with their future address database design, and presented to ICSM for national adoption in early 2024.
@@ -74,10 +173,10 @@ In 2023, several parts of this model covering general modelling and spatial mode
     schema:creator <https://orcid.org/0000-0002-8742-7730> ;
     schema:dateCreated "2021-12-16"^^xsd:date ;
     schema:dateIssued "2023-06-30"^^xsd:date ;
-    schema:dateModified "2026-01-21"^^xsd:date ;
+    schema:dateModified "2026-11-06"^^xsd:date ;
     schema:description "The national model for address information for Australian & New Zealand, realised in Semantic Web form." ;
     schema:license <http://purl.org/NET/rdflicense/cc-by4.0> ;
     schema:name "ICSM ANZ Address Model" ;
     schema:publisher <https://linked.data.gov.au/org/icsm> ;
-    schema:version "1.1.0" ;
+    schema:version "1.1.5" ;
 .

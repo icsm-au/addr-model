@@ -9,9 +9,9 @@ The validation system proposed for use with this model is the _Shapes Constraint
 
 Two example validators are provided with this model:
 
-. https://github.com/icsm-au/addr-model/blob/main/validator.ttl[validator.ttl] - a canonical validator for this model
+. https://github.com/icsm-au/addr-model/blob/main/shacl/shapes.ttl[shapes.ttl] - a canonical validator for this model
 .. Test that every Address indicates: an Addressable Object with `cn:isNameFor`; a Geocode with `addr:hasGeocode`; at least one part, that is a Compound Name, with `schema:hasPart` etc
-. https://github.com/icsm-au/addr-model/blob/main/validator-qld.ttl[validator-qld.ttl] a validator for a jurisdiction - Queensland
+. https://github.com/icsm-au/addr-model/blob/main/shacl/shapes-qld.ttl[shapes-qld.ttl] a validator for a jurisdiction - Queensland
 .. Tests that every Address indicates at least 3 parts - just for demonstration
 
 === B.2 Performing validation

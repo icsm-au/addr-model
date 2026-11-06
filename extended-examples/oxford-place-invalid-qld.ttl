@@ -1,5 +1,5 @@
 # Oxford Place - invalid QLQ example
-# This file is invalid according to validator.ttl as the file oxford-place-invalid.ttl is however it is additionally
+# This file is invalid according to shapes.ttl as the file oxford-place-invalid.ttl is however it is additionally
 # invalid according to the file oxford-place-invalid-qld.ttl with its additional requirement of at least two Address
 # Components since this file contains only 1 Address Component for the Address <http://example.com/oxford>.
 

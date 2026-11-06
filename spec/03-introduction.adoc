@@ -353,7 +353,7 @@ This document is this model's "Specification" which is its authoritative, human-
 | https://linked.data.gov.au/def/addr.ttl[Ontology] | _Schema_ | The technical, machine-readable, version of this model
 | <<Vocabularies>> | _Vocabulary_ | The codelist vocabularies developed for this model and links to others defined elsewhere but expected to be used by this model
 | <<AnnexA>> | _Guidance_ | The Requirements formally addressed by this model
-| <<AnnexB>> & https://github.com/Spatial-Information-QLD/address-model/blob/main/validator.ttl[Validator] | _Validation_ | The machine-readable validator file used to validate data claiming conformance to this model
+| <<AnnexB>> & https://github.com/Spatial-Information-QLD/address-model/blob/main/shacl/shapes.ttl[Validator] | _Validation_ | The machine-readable validator file used to validate data claiming conformance to this model
 | <<AnnexC>> | _Guidance_ | Suggestions and examples of templating for address presentation
 | <<AnnexD>>
 &

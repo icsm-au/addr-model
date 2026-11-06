@@ -1,7 +1,7 @@
 # Oxford Place - invalid example
 # This file contains the first of the two Oxford Place examples from the file oxford-place.ttl
 # but with the geometry representation value of the Geocode (geo:asWKT value) and the link to the Addressable Object
-# (addr:isAddressFor) thus this file is invalid according to validator.ttl for two reasons.
+# (addr:isAddressFor) thus this file is invalid according to shapes.ttl for two reasons.
 
 PREFIX a: <https://linked.data.gov.au/dataset/gnaf/address/>
 PREFIX as:  <https://linked.data.gov.au/dataset/gnaf/addressSite/>

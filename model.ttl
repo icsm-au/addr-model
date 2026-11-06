@@ -28,6 +28,26 @@ Examples of types of AddressableObjects are a building, a dwelling or a land par
     schema:name "Addressable Object" ;
 .
 
+:Geocode
+    a owl:Class ;
+    rdfs:isDefinedBy ont: ;
+    rdfs:subClassOf geo:Geometry ;
+    skos:historyNote "Derived from the G-NAF’s expression of Address position"@en ;
+    skos:scopeNote "Indicating a Geocode for an Address is a direct method of positioning the Address on the earth. Addresses may also be located by reference to an Addressable Object which is an indirect method. This model does not indicate any Geocode / Addressable Object geometry relations, although they may exist" ;
+    schema:description """A Geometry that has a persistent Role""" ;
+    schema:name "Geocode" ;
+    skos:example """
+# An Address with a Geocode and a role
+ex:addr-1
+  a addr:Address ;
+  addr:hasGeocode [
+    schema:additionalType addr:buildingAccessPoint ;
+    geo:asWKT "POINT (152.01 -35.03)"^^geo:wktLiteral ;  # specialised form of hasSerialization
+  ] ;
+  ...
+    """ ;
+.
+
 <https://kurrawong.ai>
     a schema:Organization ;
     schema:name "KurrawongAI" ;
@@ -55,7 +75,7 @@ Examples of types of AddressableObjects are a building, a dwelling or a land par
 
 ont:
     a owl:Ontology ;
-    owl:versionIRI :1.1.0 ;
+    owl:versionIRI :1.1.1 ;
     skos:historyNote """This model is https://www.anzlic.gov.au[ANZLIC]'s https://icsm.gov.au[Intergovernmental Committee on Surveying & Mapping (ICSM)]'s model for addressing information in Australian & New Zealand.
 
 It was originally developed between 2021 and 2023 for Queensland Spatial Information, a unit of the then Queensland Department of Resources, to assist with their future address database design, and presented to ICSM for national adoption in early 2024.
@@ -74,10 +94,10 @@ In 2023, several parts of this model covering general modelling and spatial mode
     schema:creator <https://orcid.org/0000-0002-8742-7730> ;
     schema:dateCreated "2021-12-16"^^xsd:date ;
     schema:dateIssued "2023-06-30"^^xsd:date ;
-    schema:dateModified "2026-01-21"^^xsd:date ;
+    schema:dateModified "2026-11-06"^^xsd:date ;
     schema:description "The national model for address information for Australian & New Zealand, realised in Semantic Web form." ;
     schema:license <http://purl.org/NET/rdflicense/cc-by4.0> ;
     schema:name "ICSM ANZ Address Model" ;
     schema:publisher <https://linked.data.gov.au/org/icsm> ;
-    schema:version "1.1.0" ;
+    schema:version "1.1.1" ;
 .

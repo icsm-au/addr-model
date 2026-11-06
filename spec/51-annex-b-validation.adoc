@@ -12,8 +12,8 @@ Several validators are provided with this model:
 . https://github.com/icsm-au/addr-model/blob/main/shacl/addr.ttl[shacl/addr.ttl] - a canonical validator for this model
 .. Test that every Address indicates: an Addressable Object with `cn:isNameFor`; a Geocode with `addr:hasGeocode`; at least one part, that is a Compound Name, with `schema:hasPart` etc
 . https://github.com/icsm-au/addr-model/blob/main/shacl/addr-qld.ttl[shacl/addr-qld.ttl] - Queensland's validator
-. https://github.com/icsm-au/addr-model/blob/main/shacl/addr-qld.ttl[shacl/addr-qld.ttl] - ACT's validator
-. https://github.com/icsm-au/addr-model/blob/main/shacl/addr-qld.ttl[shacl/addr-qld.ttl] - NSW's validator
+. https://github.com/icsm-au/addr-model/blob/main/shacl/addr-act.ttl[shacl/addr-act.ttl] - ACT's validator
+. https://github.com/icsm-au/addr-model/blob/main/shacl/addr-nsw.ttl[shacl/addr-nsw.ttl] - NSW's validator
 .. Tests that every Address indicates at least 3 parts - just for demonstration
 
 === B.2 Performing validation
